@@ -42,7 +42,6 @@ export default config({
         // FAQs
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -98,7 +97,6 @@ export default config({
         tips: fields.array(fields.text({ label: 'Tip' }), { label: 'Tips' }),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -157,7 +155,6 @@ export default config({
         tips: fields.array(fields.text({ label: 'Tip' }), { label: 'Tips' }),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -226,7 +223,6 @@ export default config({
         content: fields.mdx({ label: 'Content (optional)' }),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -290,7 +286,6 @@ export default config({
         
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -331,7 +326,6 @@ export default config({
         
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -372,7 +366,6 @@ export default config({
         
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -406,7 +399,6 @@ export default config({
         ),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -439,7 +431,6 @@ export default config({
         ),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -472,7 +463,6 @@ export default config({
         ),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -505,7 +495,6 @@ export default config({
         ),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -538,7 +527,6 @@ export default config({
         ),
         faqs: fields.array(
           fields.object({
-            label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
