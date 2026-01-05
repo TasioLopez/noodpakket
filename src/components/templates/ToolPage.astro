@@ -83,7 +83,7 @@ const relatedGuides = getRelatedGuides(keywords, silo, 3);
       <div class="card mb-8">
         {componentName === 'WaterCalculator' && <WaterCalculator client:load />}
         {componentName === 'FoodCalculator' && <FoodCalculator client:load />}
-        {componentName === 'Checklist' && <Checklist client:load />}
+        {componentName === 'Checklist' && <Checklist client:only="react" />}
         {componentName === '72UurCalculator' && <Calculator72Uur client:load />}
         {componentName === 'NoodpakketCalculator' && <NoodpakketCalculator client:load />}
         {componentName === 'NoodplanGenerator' && <NoodplanGenerator client:load />}

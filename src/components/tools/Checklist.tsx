@@ -72,23 +72,31 @@ const defaultChecklist: ChecklistItem[] = [
 ];
 
 export default function Checklist() {
-  const [checklist, setChecklist] = useState<ChecklistItem[]>(() => {
-    // Load from localStorage or use default
-    const saved = localStorage.getItem('noodpakket-checklist');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch {
-        return defaultChecklist;
+  // Initialize with default checklist (safe for SSR)
+  const [checklist, setChecklist] = useState<ChecklistItem[]>(defaultChecklist);
+  const [isClient, setIsClient] = useState(false);
+
+  // Load from localStorage only on client side
+  useEffect(() => {
+    setIsClient(true);
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('noodpakket-checklist');
+      if (saved) {
+        try {
+          setChecklist(JSON.parse(saved));
+        } catch {
+          // Invalid data, keep default
+        }
       }
     }
-    return defaultChecklist;
-  });
+  }, []);
 
   useEffect(() => {
-    // Save to localStorage whenever checklist changes
-    localStorage.setItem('noodpakket-checklist', JSON.stringify(checklist));
-  }, [checklist]);
+    // Save to localStorage whenever checklist changes (only on client)
+    if (isClient && typeof window !== 'undefined') {
+      localStorage.setItem('noodpakket-checklist', JSON.stringify(checklist));
+    }
+  }, [checklist, isClient]);
 
   const toggleItem = (categoryId: string, itemId: string) => {
     setChecklist((prev) =>
@@ -106,7 +114,7 @@ export default function Checklist() {
   };
 
   const resetChecklist = () => {
-    if (confirm('Weet je zeker dat je de checklist wilt resetten?')) {
+    if (typeof window !== 'undefined' && confirm('Weet je zeker dat je de checklist wilt resetten?')) {
       setChecklist(defaultChecklist);
       localStorage.removeItem('noodpakket-checklist');
     }
@@ -185,16 +193,18 @@ export default function Checklist() {
         
         <button
           onClick={() => {
-            const text = checklist
-              .map(
-                (cat) =>
-                  `${cat.category}:\n${cat.items
-                    .map((item) => `${item.checked ? '✓' : '☐'} ${item.label}`)
-                    .join('\n')}`
-              )
-              .join('\n\n');
-            navigator.clipboard.writeText(text);
-            alert('Checklist gekopieerd naar klembord!');
+            if (typeof window !== 'undefined' && navigator.clipboard) {
+              const text = checklist
+                .map(
+                  (cat) =>
+                    `${cat.category}:\n${cat.items
+                      .map((item) => `${item.checked ? '✓' : '☐'} ${item.label}`)
+                      .join('\n')}`
+                )
+                .join('\n\n');
+              navigator.clipboard.writeText(text);
+              alert('Checklist gekopieerd naar klembord!');
+            }
           }}
           className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
         >
