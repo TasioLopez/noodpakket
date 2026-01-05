@@ -37,17 +37,14 @@ export default config({
         ),
         
         // FAQs
-        // FAQs
         // @ts-ignore - Keystatic type definitions don't fully match runtime structure
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              // @ts-ignore
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -100,11 +97,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -164,11 +160,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -237,11 +232,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -307,11 +301,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -349,11 +342,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -397,11 +389,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -438,11 +429,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -478,11 +468,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -518,11 +507,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -558,11 +546,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
@@ -598,11 +585,10 @@ export default config({
         faqs: fields.array(
           // @ts-ignore
           fields.object({
-            schema: {
-              // @ts-ignore
-              question: fields.text({ label: 'Question' }),
-              answer: fields.text({ label: 'Answer', multiline: true }),
-            },
+            // @ts-ignore
+            question: fields.text({ label: 'Question' }),
+            // @ts-ignore
+            answer: fields.text({ label: 'Answer', multiline: true }),
           }),
           { label: 'FAQs' }
         ),
