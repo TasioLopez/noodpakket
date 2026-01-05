@@ -37,14 +37,10 @@ export default config({
         ),
         
         // FAQs
-        // @ts-ignore - Keystatic type definitions don't fully match runtime structure
+        // FAQs
         faqs: fields.array(
-          // @ts-ignore
           fields.object({
-            // @ts-ignore
-            label: 'FAQ Item',
             schema: {
-              // @ts-ignore
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
             },
