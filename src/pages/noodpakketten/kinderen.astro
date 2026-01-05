@@ -1,0 +1,86 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Noodpakket voor Kinderen</h2>
+<p>Een noodpakket voor kinderen vereist extra aandacht voor hun specifieke behoeften, veiligheid en comfort. Hier is een complete gids voor het samenstellen van een kindvriendelijk noodpakket.</p>
+
+<h3>Speciale Overwegingen voor Kinderen</h3>
+<p>Bij het samenstellen van een noodpakket voor kinderen zijn er belangrijke factoren:</p>
+<ul>
+  <li>Kleinere porties maar vaker eten</li>
+  <li>Extra veiligheidsmaatregelen</li>
+  <li>Comfort en vertrouwde items</li>
+  <li>Educatie en uitleg op kinderniveau</li>
+  <li>Entertainment om stress te verminderen</li>
+</ul>
+
+<h3>Voeding voor Kinderen</h3>
+<p>Kinderen hebben specifieke voedingsbehoeften:</p>
+<ul>
+  <li>Kleinere porties maar vaker eten</li>
+  <li>Kindvriendelijk voedsel dat ze gewend zijn</li>
+  <li>Extra snacks en energierepen</li>
+  <li>Voldoende vocht (1,5-2 liter per dag)</li>
+</ul>
+
+<h3>Veiligheid en Comfort</h3>
+<p>Zorg voor extra veiligheid:</p>
+<ul>
+  <li>Kinder-EHBO-set</li>
+  <li>Vertrouwde knuffels of speelgoed</li>
+  <li>Comfort items zoals favoriete deken</li>
+  <li>Foto's van familieleden</li>
+</ul>
+`;
+
+const checklist = [
+  'Water: 4,5-6 liter per kind voor 3 dagen',
+  'Kindvriendelijk voedsel (blik, crackers, etc.)',
+  'Extra snacks en energierepen',
+  'Kinder-EHBO-set',
+  'Kindvriendelijke medicijnen',
+  'Vertrouwde knuffels of speelgoed',
+  'Kleurboeken en potloden',
+  'Kaartspellen of kleine spelletjes',
+  'Favoriete boeken',
+  'Foto\'s van familie',
+  'Kleine zaklamp (voor kinderen)',
+  'Comfort items (deken, kussen)',
+];
+
+const tips = [
+  'Betrek kinderen bij de voorbereiding (op hun niveau)',
+  'Leg uit wat een noodpakket is zonder angst aan te jagen',
+  'Oefen regelmatig wat te doen bij noodsituaties',
+  'Zorg voor vertrouwde items om stress te verminderen',
+  'Houd rekening met verschillende leeftijden',
+];
+
+const faqs = [
+  {
+    question: 'Hoe leg ik kinderen uit wat een noodpakket is?',
+    answer: 'Leg het uit als een "bijzondere tas" die we hebben "voor het geval er iets gebeurt". Focus op veiligheid en voorbereiding, niet op angst. Maak het niet te eng.',
+  },
+  {
+    question: 'Wat is het verschil tussen een kind en volwassene noodpakket?',
+    answer: 'Kinderen hebben kleinere porties nodig, maar wel vaker. Ook zijn er extra comfort items en entertainment nodig. De basis (water, voedsel, EHBO) blijft hetzelfde, maar aangepast voor kinderen.',
+  },
+];
+---
+
+<Subpage
+  title="Noodpakket voor Kinderen"
+  description="Leer hoe je een kindvriendelijk noodpakket samenstelt. Met speciale aandacht voor veiligheid, comfort en educatie."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="kinderen"
+  keywords={['noodpakket kinderen', 'kinderen voorbereiding', 'noodpakket kids']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Noodpakket voor Kinderen - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoe je een kindvriendelijk noodpakket samenstelt. Checklist, tips en alles wat je nodig hebt voor kinderen."
+/>
+
+

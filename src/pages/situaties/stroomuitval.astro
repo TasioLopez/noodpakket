@@ -1,0 +1,82 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Stroomuitval: Wat te Doen?</h2>
+<p>Stroomuitval kan iedereen overkomen, of het nu gaat om een kortstondige storing of een langdurige blackout. Het is belangrijk om te weten wat je moet doen wanneer de stroom uitvalt.</p>
+
+<h3>Directe Acties bij Stroomuitval</h3>
+<p>Wanneer de stroom uitvalt, zijn er een paar belangrijke dingen die je direct moet controleren:</p>
+<ul>
+  <li>Controleer of alleen jouw huis of het hele gebied zonder stroom zit</li>
+  <li>Schakel apparaten uit die aan stonden om schade te voorkomen</li>
+  <li>Laat één lamp aan zodat je weet wanneer de stroom terugkomt</li>
+  <li>Controleer je zekeringkast</li>
+</ul>
+
+<h3>Voorbereiding op Stroomuitval</h3>
+<p>Bereid je voor op stroomuitval door:</p>
+<ul>
+  <li>Altijd een zaklamp met extra batterijen bij de hand te hebben</li>
+  <li>Een batterij-aangedreven radio te hebben voor informatie</li>
+  <li>Een powerbank opgeladen te houden voor je telefoon</li>
+  <li>Een voorraad kaarsen en lucifers te hebben</li>
+  <li>Niet-elektrische kookmethoden te overwegen (campinggas)</li>
+</ul>
+
+<h3>Langdurige Stroomuitval</h3>
+<p>Bij langdurige stroomuitval (langer dan enkele uren) moet je extra voorzorgsmaatregelen nemen:</p>
+<ul>
+  <li>Houd koelkast en vriezer gesloten - voedsel blijft langer goed</li>
+  <li>Gebruik batterij-aangedreven of hand-aangedreven apparaten</li>
+  <li>Wees voorzichtig met kaarsen - brandgevaar</li>
+  <li>Houd contact met buren en familie</li>
+</ul>
+`;
+
+const checklist = [
+  'Controleer of het alleen jouw huis betreft of het hele gebied',
+  'Schakel apparaten uit om schade te voorkomen',
+  'Laat één lamp aan om te zien wanneer stroom terugkomt',
+  'Controleer zekeringkast',
+  'Gebruik zaklamp (niet kaarsen) voor veiligheid',
+  'Houd koelkast/vriezer gesloten',
+  'Luister naar radio voor updates',
+  'Laad telefoon met powerbank',
+];
+
+const tips = [
+  'Zorg altijd voor opgeladen powerbanks',
+  'Houd een voorraad batterijen in verschillende maten',
+  'Overweeg een generator voor langdurige uitval',
+  'Test je noodvoorbereiding regelmatig',
+  'Spreek met buren af om elkaar te helpen',
+];
+
+const faqs = [
+  {
+    question: 'Hoe lang blijft voedsel goed in de koelkast zonder stroom?',
+    answer: 'Bij gesloten deur blijft voedsel in de koelkast ongeveer 4 uur goed, in de vriezer 24-48 uur. Gooi voedsel weg als het langer dan 2 uur boven 4°C is geweest.',
+  },
+  {
+    question: 'Is een generator nodig voor stroomuitval?',
+    answer: 'Voor korte stroomuitval is een generator meestal niet nodig. Voor langdurige uitval kan een generator handig zijn, maar zorg dat je deze veilig gebruikt en buiten plaatst.',
+  },
+];
+---
+
+<Subpage
+  title="Stroomuitval: Wat te Doen?"
+  description="Leer wat je moet doen bij stroomuitval. Van directe acties tot langdurige voorbereiding - we helpen je goed voorbereid te zijn."
+  content={content}
+  silo="situaties"
+  pageSlug="stroomuitval"
+  keywords={['stroomuitval', 'blackout', 'stroomstoring', 'elektriciteit uitval']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Stroomuitval: Wat te Doen - Complete Gids | Noodpakket Center"
+  seoDescription="Leer wat je moet doen bij stroomuitval. Complete gids met checklist, tips en adviezen voor korte en langdurige stroomuitval."
+/>
+
+

@@ -1,0 +1,116 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Evacuatie: Wat te Doen?</h2>
+<p>Evacuatie betekent dat je je huis of gebied moet verlaten vanwege een dreigend gevaar. Dit kan gebeuren bij overstromingen, branden, gaslekken of andere noodsituaties. Het is belangrijk om te weten wat je moet doen.</p>
+
+<h3>Wanneer Wordt Geëvacueerd?</h3>
+<p>Evacuatie kan nodig zijn bij:</p>
+<ul>
+  <li>Overstromingen</li>
+  <li>Branden (bosbrand, woningbrand)</li>
+  <li>Gaslekken of chemische incidenten</li>
+  <li>Extreem weer</li>
+  <li>Andere noodsituaties die gevaar opleveren</li>
+</ul>
+
+<h3>Wat te Doen bij Evacuatiebevel</h3>
+<p>Wanneer je een evacuatiebevel krijgt:</p>
+
+<h4>1. Volg Instructies Direct Op</h4>
+<ul>
+  <li>Luister naar NL-Alert</li>
+  <li>Volg instructies van hulpdiensten</li>
+  <li>Evacueer zo snel mogelijk</li>
+  <li>Ga NIET terug zonder toestemming</li>
+</ul>
+
+<h4>2. Neem Go-Bag Mee</h4>
+<ul>
+  <li>Pak je go-bag (evacuatietas)</li>
+  <li>Neem alleen essentiële items</li>
+  <li>Verlaat snel maar rustig</li>
+</ul>
+
+<h4>3. Veilige Routes</h4>
+<ul>
+  <li>Gebruik aangewezen evacuatieroutes</li>
+  <li>Vermijd overstroomde gebieden</li>
+  <li>Luister naar verkeersinformatie</li>
+  <li>Help anderen waar mogelijk</li>
+</ul>
+
+<h3>Voorbereiding op Evacuatie</h3>
+<p>Bereid je voor door:</p>
+<ul>
+  <li>Een go-bag klaar te hebben</li>
+  <li>Een evacuatieplan te maken</li>
+  <li>Meerdere evacuatieroutes te kennen</li>
+  <li>Afspraken te maken met familie</li>
+  <li>Belangrijke documenten te kopiëren</li>
+</ul>
+
+<h3>Na Evacuatie</h3>
+<p>Na evacuatie:</p>
+<ul>
+  <li>Registreer je bij opvanglocatie</li>
+  <li>Houd contact met familie</li>
+  <li>Wacht op instructies voor terugkeer</li>
+  <li>Ga niet terug zonder toestemming</li>
+</ul>
+`;
+
+const checklist = [
+  'Luister naar NL-Alert en volg instructies',
+  'Pak je go-bag (evacuatietas)',
+  'Neem alleen essentiële items mee',
+  'Schakel gas, water en elektriciteit uit',
+  'Sluit ramen en deuren',
+  'Verlaat via veilige route',
+  'Neem je telefoon en oplader mee',
+  'Neem belangrijke documenten mee',
+  'Informeer buren (als mogelijk)',
+  'Ga naar opvanglocatie',
+];
+
+const tips = [
+  'Maak van tevoren een evacuatieplan',
+  'Oefen evacuatie met je gezin',
+  'Ken meerdere routes uit je buurt',
+  'Houd je go-bag altijd klaar',
+  'Maak afspraken met familie over verzamelpunt',
+  'Zorg dat alle gezinsleden weten wat te doen',
+];
+
+const faqs = [
+  {
+    question: 'Hoe lang duurt evacuatie meestal?',
+    answer: 'Evacuatie kan variëren van enkele uren tot dagen of zelfs weken, afhankelijk van de situatie. Bereid je voor op minimaal 72 uur weg van huis.',
+  },
+  {
+    question: 'Wat moet ik achterlaten bij evacuatie?',
+    answer: 'Laat alles achter wat niet essentieel is. Focus op mensen, belangrijke documenten en je go-bag. Materiële zaken kunnen worden vervangen.',
+  },
+  {
+    question: 'Wat als ik geen vervoer heb bij evacuatie?',
+    answer: 'Neem contact op met hulpdiensten. Er zijn vaak speciale vervoersmiddelen voor mensen zonder eigen vervoer. Maak dit onderdeel van je evacuatieplan.',
+  },
+];
+---
+
+<Subpage
+  title="Evacuatie: Wat te Doen?"
+  description="Leer wat te doen bij evacuatie. Van voorbereiding tot uitvoering - we helpen je goed voorbereid te zijn op evacuatie scenario's."
+  content={content}
+  silo="situaties"
+  pageSlug="evacuatie"
+  keywords={['evacuatie', 'wat te doen bij evacuatie', 'evacuatieplan', 'noodsituatie']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Evacuatie: Wat te Doen - Complete Gids | Noodpakket Center"
+  seoDescription="Leer wat te doen bij evacuatie. Complete gids met checklist, tips en alles wat je moet weten over evacuatie voorbereiding."
+/>
+
+

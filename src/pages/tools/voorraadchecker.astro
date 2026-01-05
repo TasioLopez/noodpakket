@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import Voorraadchecker from '../../components/tools/Voorraadchecker';
+
+const faqs = [
+  {
+    question: 'Hoe vaak moet ik mijn voorraad controleren?',
+    answer: 'Het wordt aangeraden om je voorraad minimaal 2 keer per jaar te controleren, bij voorkeur in het voor- en najaar. Controleer ook houdbaarheidsdata.',
+  },
+  {
+    question: 'Wat als ik niet alles heb?',
+    answer: 'Begin met de essentieel items zoals water, voedsel en EHBO. Bouw geleidelijk uit. Gebruik de export functie om een boodschappenlijst te genereren.',
+  },
+];
+---
+
+<ToolPage
+  title="Voorraadchecker"
+  description="Controleer je huidige voorraad en zie direct wat je nog nodig hebt. Update je voorraad en genereer een boodschappenlijst."
+  toolComponent={Voorraadchecker}
+  silo="tools"
+  keywords={['voorraadchecker', 'voorraad controleren', 'inventaris', 'noodvoorraad']}
+  faqs={faqs}
+  seoTitle="Voorraadchecker - Controleer Je Noodvoorraad | Noodpakket Center"
+  seoDescription="Controleer je huidige voorraad en zie direct wat je nog nodig hebt. Genereer een boodschappenlijst voor ontbrekende items."
+/>
+
+

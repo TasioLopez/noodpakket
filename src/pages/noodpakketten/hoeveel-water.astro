@@ -1,0 +1,90 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Hoeveel Water Heb Je Nodig?</h2>
+<p>Water is essentieel voor overleving. Tijdens noodsituaties is het belangrijk om voldoende water beschikbaar te hebben. Hier lees je hoeveel water je nodig hebt en hoe je dit berekent.</p>
+
+<h3>Basisrichtlijnen</h3>
+<p>De algemene richtlijn is:</p>
+<ul>
+  <li><strong>Minimaal 3 liter per persoon per dag</strong></li>
+  <li>Dit geldt voor normale omstandigheden</li>
+  <li>Bij warm weer of inspanning is meer nodig</li>
+  <li>Kinderen en baby's hebben minder nodig, maar niet veel minder</li>
+</ul>
+
+<h3>Watervoorraad Berekenen</h3>
+<p>Voor een 72-uurs voorraad:</p>
+<ul>
+  <li>Volwassene: 3 liter × 3 dagen = 9 liter</li>
+  <li>Kind (5-12 jaar): 1,5-2 liter × 3 dagen = 4,5-6 liter</li>
+  <li>Baby: 0,5-1 liter × 3 dagen = 1,5-3 liter</li>
+</ul>
+
+<h3>Waterverdeling</h3>
+<p>Van de 3 liter per dag wordt gebruikt:</p>
+<ul>
+  <li><strong>Drinken:</strong> 1,5-2 liter (60%)</li>
+  <li><strong>Koken:</strong> 0,5-1 liter (30%)</li>
+  <li><strong>Hygiene:</strong> 0,3-0,5 liter (10%)</li>
+</ul>
+
+<h3>Factoren die Meespelen</h3>
+<p>Je hebt meer water nodig bij:</p>
+<ul>
+  <li>Warm weer of hittegolf</li>
+  <li>Fysieke inspanning</li>
+  <li>Ziekte of koorts</li>
+  <li>Zwangerschap of borstvoeding</li>
+  <li>Langere noodsituaties (meer dan 3 dagen)</li>
+</ul>
+
+<h3>Voor Langere Periodes</h3>
+<p>Voor langere noodsituaties:</p>
+<ul>
+  <li>Minimaal 4 liter per persoon per dag</li>
+  <li>Overweeg waterzuivering methoden</li>
+  <li>Bouw grotere voorraad op</li>
+  <li>Leer water te zuiveren</li>
+</ul>
+`;
+
+const tips = [
+  'Bereken altijd ruim - beter te veel dan te weinig',
+  'Houd rekening met warm weer (meer water nodig)',
+  'Overweeg waterzuivering voor langere periodes',
+  'Roteer je voorraad regelmatig',
+  'Verspreid opslag (niet alles op één plek)',
+];
+
+const faqs = [
+  {
+    question: 'Is 3 liter per dag echt genoeg?',
+    answer: '3 liter per dag is het minimum voor normale omstandigheden. Bij warm weer, inspanning of ziekte heb je meer nodig. Plan altijd ruim.',
+  },
+  {
+    question: 'Hoeveel water hebben kinderen nodig?',
+    answer: 'Kinderen van 5-12 jaar hebben ongeveer 1,5-2 liter per dag nodig. Baby\'s hebben 0,5-1 liter per dag nodig, maar dit hangt af van leeftijd en voeding.',
+  },
+  {
+    question: 'Wat als ik niet genoeg water heb?',
+    answer: 'Als je niet genoeg water hebt, prioriteer drinken. Gebruik waterzuivering methoden om meer water beschikbaar te maken. Vraag om hulp als mogelijk.',
+  },
+];
+---
+
+<Subpage
+  title="Hoeveel Water Heb Je Nodig?"
+  description="Leer hoeveel water je nodig hebt tijdens noodsituaties. Richtlijnen per persoon, per dag, en hoe je je watervoorraad berekent."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="hoeveel-water"
+  keywords={['hoeveel water', 'water berekenen', 'watervoorraad', 'water per persoon']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Hoeveel Water Heb Je Nodig? - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoeveel water je nodig hebt tijdens noodsituaties. Richtlijnen per persoon, berekeningen en tips voor je watervoorraad."
+/>
+
+

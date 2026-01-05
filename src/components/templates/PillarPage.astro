@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layout/BaseLayout.astro';
+import Card from '../ui/Card.astro';
+import CardGrid from '../ui/CardGrid.astro';
+import FAQ from '../ui/FAQ.astro';
+import ToolSidebar from '../ui/ToolSidebar.astro';
+import { getAllSiloPages, getRelatedTools } from '@lib/internal-linking';
+import type { Silo } from '@lib/internal-linking';
+
+interface Props {
+  title: string;
+  description: string;
+  silo: Silo;
+  keywords?: string[];
+  faqs?: Array<{ question: string; answer: string }>;
+  seoTitle?: string;
+  seoDescription?: string;
+  introContent?: string; // Optional rich intro content
+  whatYoullFind?: Array<{ title: string; description: string }>; // Optional "What you'll find" items
+}
+
+const { 
+  title, 
+  description, 
+  silo, 
+  keywords = [], 
+  faqs = [], 
+  seoTitle, 
+  seoDescription,
+  introContent,
+  whatYoullFind,
+} = Astro.props;
+const allPages = getAllSiloPages(silo);
+const relatedTools = getRelatedTools(keywords);
+
+// Get featured pages (first 3) and remaining pages
+const featuredPages = allPages.slice(0, 3);
+const remainingPages = allPages.slice(3);
+---
+
+<BaseLayout
+  seo={{
+    title: seoTitle || title,
+    description: seoDescription || description,
+    keywords,
+    canonical: `/${silo}`,
+  }}
+  breadcrumbs={[{ name: title, url: `/${silo}` }]}
+>
+  <!-- Hero/Introduction Section -->
+  <section class="section section-white pt-12 md:pt-16">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="mb-6">{title}</h1>
+        
+        <div class="prose-custom mb-8">
+          <p class="text-xl text-neutral-700 font-medium mb-6 leading-relaxed">
+            {description}
+          </p>
+          
+          {introContent ? (
+            <div set:html={introContent} />
+          ) : (
+            <>
+              <p class="text-lg text-neutral-600 mb-4 leading-relaxed">
+                Op deze pagina vind je alles wat je nodig hebt om je goed voor te bereiden op noodsituaties. 
+                We hebben praktische gidsen, handige tools en uitgebreide informatie samengesteld om je te helpen 
+                de juiste keuzes te maken voor jouw specifieke situatie.
+              </p>
+              <p class="text-lg text-neutral-600 leading-relaxed">
+                Of je nu op zoek bent naar een basis noodpakket of een uitgebreide voorbereiding, 
+                hier vind je alle informatie die je nodig hebt om goed voorbereid te zijn.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Find Section -->
+  {whatYoullFind && whatYoullFind.length > 0 && (
+    <section class="section section-light">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Wat je hier vindt</h2>
+          <p class="text-lg text-neutral-600 text-center mb-12 max-w-2xl mx-auto">
+            Ontdek alle onderwerpen en hulpmiddelen die we voor je hebben samengesteld
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whatYoullFind.map((item) => (
+              <div class="card">
+                <h3 class="text-xl font-bold mb-3">{item.title}</h3>
+                <p class="text-neutral-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Main Content Section -->
+  <section class="section section-white">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Main Content Area -->
+          <div class="lg:col-span-2">
+            <!-- Featured Pages (if any) -->
+            {featuredPages.length > 0 && (
+              <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Belangrijkste onderwerpen</h2>
+                <CardGrid columns={1}>
+                  {featuredPages.map((page) => (
+                    <Card
+                      title={page.title}
+                      description={page.description || `Lees meer over ${page.title.toLowerCase()} en ontdek wat je nodig hebt.`}
+                      url={page.url}
+                    />
+                  ))}
+                </CardGrid>
+              </div>
+            )}
+
+            <!-- All Pages Grid -->
+            {remainingPages.length > 0 && (
+              <div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Alle onderwerpen</h2>
+                <CardGrid columns={2}>
+                  {remainingPages.map((page) => (
+                    <Card
+                      title={page.title}
+                      description={page.description || `Ontdek alles over ${page.title.toLowerCase()}.`}
+                      url={page.url}
+                    />
+                  ))}
+                </CardGrid>
+              </div>
+            )}
+
+            {/* If no featured pages, show all pages */}
+            {featuredPages.length === 0 && allPages.length > 0 && (
+              <div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Alle onderwerpen</h2>
+                <CardGrid columns={2}>
+                  {allPages.map((page) => (
+                    <Card
+                      title={page.title}
+                      description={page.description || `Ontdek alles over ${page.title.toLowerCase()}.`}
+                      url={page.url}
+                    />
+                  ))}
+                </CardGrid>
+              </div>
+            )}
+
+            {/* If no pages at all */}
+            {allPages.length === 0 && (
+              <div class="callout-info">
+                <p class="text-lg">Binnenkort beschikbaar: we werken aan uitgebreide content voor dit onderwerp.</p>
+              </div>
+            )}
+
+            {/* FAQ Section */}
+            {faqs.length > 0 && (
+              <div class="mt-16">
+                <FAQ faqs={faqs} />
+              </div>
+            )}
+          </div>
+          
+          <!-- Sidebar -->
+          {relatedTools.length > 0 && (
+            <div class="lg:col-span-1">
+              <ToolSidebar tools={relatedTools} />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

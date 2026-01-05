@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import Evacuatieplan from '../../components/tools/Evacuatieplan';
+
+const faqs = [
+  {
+    question: 'Hoe vaak moet ik mijn evacuatieplan oefenen?',
+    answer: 'Het wordt aangeraden om je evacuatieplan minstens 2 keer per jaar te oefenen met je gezin. Test beide routes en zorg dat iedereen weet wat te doen.',
+  },
+  {
+    question: 'Wat als ik geen auto heb?',
+    answer: 'Plan alternatief vervoer zoals fietsen, openbaar vervoer, of afspraken maken met buren of familie. Maak dit onderdeel van je evacuatieplan.',
+  },
+];
+---
+
+<ToolPage
+  title="Evacuatieplan"
+  description="Maak een compleet evacuatieplan voor je huis en buurt. Plan je routes, verzamelpunten en wat je mee moet nemen bij evacuatie."
+  toolComponent={Evacuatieplan}
+  silo="tools"
+  keywords={['evacuatieplan', 'evacuatie', 'vluchtroutes', 'verzamelpunt']}
+  faqs={faqs}
+  seoTitle="Evacuatieplan - Maak Je Evacuatieplan | Noodpakket Center"
+  seoDescription="Maak een compleet evacuatieplan voor je huis. Plan routes, verzamelpunten en essentiële items voor evacuatie."
+/>
+
+

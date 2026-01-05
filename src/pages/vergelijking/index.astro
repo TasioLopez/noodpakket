@@ -1,0 +1,20 @@
+---
+import { getSingleton } from 'astro:content';
+import PillarPage from '../../components/templates/PillarPage.astro';
+
+const pillar = await getSingleton('vergelijkingPillar');
+const data = pillar.data;
+const introContent = data.introContent ? (await pillar.render()).html : undefined;
+---
+
+<PillarPage
+  title={data.title || 'Vergelijkingen'}
+  description={data.description || 'Vergelijk de beste producten voor je noodpakket. Onafhankelijke reviews en vergelijkingen van noodpakketten, EHBO-sets, en meer.'}
+  silo="vergelijking"
+  keywords={data.keywords || ['vergelijking', 'reviews', 'beste producten', 'noodpakket vergelijken']}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle || 'Vergelijkingen - Vergelijk Producten voor Noodpakketten | Noodpakket Center'}
+  seoDescription={data.seoDescription || 'Vergelijk de beste producten voor je noodpakket. Onafhankelijke reviews en vergelijkingen van noodpakketten, EHBO-sets, en meer.'}
+  introContent={introContent}
+  whatYoullFind={data.whatYoullFind || []}
+/>

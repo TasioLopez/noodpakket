@@ -1,0 +1,50 @@
+---
+import { generateFAQSchema } from '@lib/seo';
+
+interface Props {
+  faqs: Array<{ question: string; answer: string }>;
+  class?: string;
+}
+
+const { faqs, class: className = '' } = Astro.props;
+
+if (!faqs || faqs.length === 0) {
+  return null;
+}
+
+const faqSchema = generateFAQSchema(faqs);
+---
+
+<section class={`${className}`}>
+  <h2 class="text-2xl font-semibold text-neutral-900 mb-6">Veelgestelde Vragen</h2>
+  
+  <div class="space-y-4">
+    {faqs.map((faq) => (
+      <details class="card">
+        <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex items-center justify-between">
+          <span>{faq.question}</span>
+          <svg class="w-5 h-5 text-neutral-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-neutral-200 text-neutral-700 prose-custom">
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+  
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+

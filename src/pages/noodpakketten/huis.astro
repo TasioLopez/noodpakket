@@ -1,0 +1,70 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Noodpakket voor Thuis</h2>
+<p>Een noodpakket voor thuis is essentieel om jezelf en je gezin te beschermen tijdens noodsituaties. Dit pakket is bedoeld om minstens 72 uur zelfstandig te kunnen functioneren zonder hulp van buitenaf.</p>
+
+<h3>Waarom een Noodpakket Thuis?</h3>
+<p>Noodsituaties kunnen onverwachts optreden. Of het nu gaat om stroomuitval, overstroming, of andere crisissituaties - met een goed gevuld noodpakket ben je voorbereid. Het Rode Kruis en de Rijksoverheid adviseren elke huishouden om minimaal een 72-uur voorraad aan te houden.</p>
+
+<h3>Basisbenodigdheden</h3>
+<p>Elk thuis noodpakket moet de volgende basisbenodigdheden bevatten:</p>
+<ul>
+  <li>Water: minimaal 3 liter per persoon per dag</li>
+  <li>Lang houdbaar voedsel voor minimaal 3 dagen</li>
+  <li>EHBO-set</li>
+  <li>Batterij-aangedreven radio</li>
+  <li>Zaklamp met extra batterijen</li>
+  <li>Belangrijke documenten</li>
+</ul>
+`;
+
+const checklist = [
+  'Water: 9 liter per persoon (3 dagen)',
+  'Lang houdbaar voedsel (blik, gedroogd)',
+  'EHBO-set',
+  'Batterij-aangedreven radio',
+  'Zaklamp met extra batterijen',
+  'Powerbank voor telefoon',
+  'Contant geld (minimaal €200)',
+  'Belangrijke documenten (kopieën)',
+  'Medicijnen (indien nodig)',
+  'Persoonlijke verzorgingsartikelen',
+];
+
+const tips = [
+  'Houd het pakket op een makkelijk bereikbare plek',
+  'Controleer minimaal 2x per jaar de houdbaarheidsdata',
+  'Roteer voedselvoorraad regelmatig',
+  'Zorg voor voldoende batterijen',
+  'Bewaar belangrijke documenten in waterdichte verpakking',
+];
+
+const faqs = [
+  {
+    question: 'Hoe vaak moet ik mijn noodpakket controleren?',
+    answer: 'Het wordt aangeraden om je noodpakket minimaal 2 keer per jaar te controleren, bij voorkeur in het voor- en najaar. Controleer houdbaarheidsdata, batterijen en vervang wat nodig is.',
+  },
+  {
+    question: 'Waar moet ik het noodpakket bewaren?',
+    answer: 'Bewaar het pakket op een makkelijk bereikbare plek, bij voorkeur in een kast of berging op de begane grond. Zorg dat alle gezinsleden weten waar het staat.',
+  },
+];
+---
+
+<Subpage
+  title="Noodpakket voor Thuis"
+  description="Leer hoe je een compleet noodpakket voor thuis samenstelt. Essentiële tips en checklists voor een goede voorbereiding op noodsituaties."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="huis"
+  keywords={['noodpakket thuis', 'thuis voorbereiding', 'noodpakket huis', 'crisisvoorbereiding thuis']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Noodpakket voor Thuis - Complete Gids | Noodpakket Center"
+  seoDescription="Stel een compleet noodpakket voor thuis samen. Checklist, tips en alles wat je moet weten voor een goede voorbereiding op noodsituaties."
+/>
+
+

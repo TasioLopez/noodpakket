@@ -1,0 +1,48 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import ComparisonPage from '../../components/templates/ComparisonPage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('vergelijking');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const content = await entry.render();
+
+// Transform products from Keystatic format to ComparisonPage format
+const products = (data.products || []).map((product: any) => ({
+  name: product.name,
+  brand: product.brand,
+  description: product.description,
+  pros: product.pros || [],
+  cons: product.cons || [],
+  price: product.price,
+  rating: product.rating,
+  image: product.image,
+}));
+
+// Transform table data
+const tableHeaders = data.tableHeaders || [];
+const tableRows = data.tableRows || [];
+---
+
+<ComparisonPage
+  title={data.title}
+  description={data.description}
+  products={products}
+  tableHeaders={tableHeaders.length > 0 ? tableHeaders : undefined}
+  tableRows={tableRows.length > 0 ? tableRows : undefined}
+  topProducts={products.slice(0, 3)} // First 3 as top products
+  keywords={data.keywords || []}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle}
+  seoDescription={data.seoDescription}
+/>
+
+
+

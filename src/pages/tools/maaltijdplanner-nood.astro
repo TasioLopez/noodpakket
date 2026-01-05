@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import MaaltijdPlanner from '../../components/tools/MaaltijdPlanner';
+
+const faqs = [
+  {
+    question: 'Zijn deze maaltijden geschikt voor langere opslag?',
+    answer: 'De geselecteerde maaltijden zijn gebaseerd op lang houdbaar voedsel zoals blikvoedsel en gedroogde producten. Controleer altijd de houdbaarheidsdata en bewaar op een koele, droge plek.',
+  },
+  {
+    question: 'Kan ik mijn eigen maaltijden toevoegen?',
+    answer: 'De planner gebruikt een vaste set maaltijden die geschikt zijn voor noodvoorraden. Je kunt de boodschappenlijst aanpassen aan je eigen voorkeuren.',
+  },
+];
+---
+
+<ToolPage
+  title="Maaltijdplanner Nood"
+  description="Plan je maaltijden voor noodsituaties. Selecteer beschikbare maaltijden en genereer een compleet maaltijdplan met boodschappenlijst."
+  toolComponent={MaaltijdPlanner}
+  silo="tools"
+  keywords={['maaltijdplanner', 'noodmaaltijden', 'maaltijdplan', 'voedselplanning']}
+  faqs={faqs}
+  seoTitle="Maaltijdplanner Nood - Plan Je Noodmaaltijden | Noodpakket Center"
+  seoDescription="Plan je maaltijden voor noodsituaties. Genereer een compleet maaltijdplan met boodschappenlijst op basis van je gezinssituatie."
+/>
+
+

@@ -1,0 +1,32 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import Subpage from '../../components/templates/Subpage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('kennisbank');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const content = await entry.render();
+---
+
+<Subpage
+  title={data.title}
+  description={data.description}
+  content={content.html}
+  silo="kennisbank"
+  pageSlug={entry.slug}
+  keywords={data.keywords || []}
+  tips={data.tips || []}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle}
+  seoDescription={data.seoDescription}
+/>
+
+
+

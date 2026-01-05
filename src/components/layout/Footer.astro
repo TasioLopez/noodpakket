@@ -1,0 +1,63 @@
+---
+const footerLinks = {
+  navigatie: [
+    { label: 'Over ons', url: '/over-ons' },
+    { label: 'Contact', url: '/contact' },
+    { label: 'Privacy', url: '/privacy' },
+    { label: 'Disclaimer', url: '/disclaimer' },
+    { label: 'Veiligheidsrichtlijnen', url: '/veiligheidsrichtlijnen' },
+    { label: 'Sitemap', url: '/sitemap' },
+  ],
+};
+---
+
+<footer class="bg-neutral-900 text-neutral-300 mt-24">
+  <div class="container-custom py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">Noodpakket Center</h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          De meest complete en betrouwbare bron voor noodpakketten en crisisvoorbereiding in Nederland.
+        </p>
+      </div>
+      
+      <div>
+        <h4 class="text-white font-semibold mb-4">Navigatie</h4>
+        <ul class="space-y-2 text-sm">
+          {footerLinks.navigatie.map((link) => (
+            <li>
+              <a href={link.url} class="text-neutral-400 hover:text-white transition-colors no-underline">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-white font-semibold mb-4">Categorieën</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/noodpakketten" class="text-neutral-400 hover:text-white transition-colors no-underline">Noodpakketten</a></li>
+          <li><a href="/situaties" class="text-neutral-400 hover:text-white transition-colors no-underline">Situaties</a></li>
+          <li><a href="/gidsen" class="text-neutral-400 hover:text-white transition-colors no-underline">Gidsen</a></li>
+          <li><a href="/kennisbank" class="text-neutral-400 hover:text-white transition-colors no-underline">Kennisbank</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-white font-semibold mb-4">Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/tools/noodpakket-checklist" class="text-neutral-400 hover:text-white transition-colors no-underline">Noodpakket Checklist</a></li>
+          <li><a href="/tools/water-calculator" class="text-neutral-400 hover:text-white transition-colors no-underline">Water Calculator</a></li>
+          <li><a href="/tools/voedsel-calculator" class="text-neutral-400 hover:text-white transition-colors no-underline">Voedsel Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-12 pt-8 border-t border-neutral-800">
+      <p class="text-sm text-center text-neutral-500">
+        © {new Date().getFullYear()} Noodpakket Center. Alle rechten voorbehouden.
+      </p>
+    </div>
+  </div>
+</footer>

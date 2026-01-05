@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Card from '../components/ui/Card.astro';
+import CardGrid from '../components/ui/CardGrid.astro';
+import CTA from '../components/ui/CTA.astro';
+
+const seoConfig = {
+  title: 'Noodpakket Center - De Complete Gids voor Crisisvoorbereiding',
+  description: 'De meest complete en betrouwbare bron voor noodpakketten en crisisvoorbereiding in Nederland. Leer hoe je je voorbereidt op noodsituaties.',
+  keywords: ['noodpakket', 'crisisvoorbereiding', 'noodpakketten', 'voorbereiding'],
+};
+
+const silos = [
+  {
+    title: 'Noodpakketten',
+    description: 'Ontdek welk noodpakket het beste bij jou past voor jouw specifieke situatie en behoeften.',
+    url: '/noodpakketten',
+    image: '/images/noodpakketten.jpg',
+    iconColor: 'primary' as const,
+  },
+  {
+    title: 'Situaties',
+    description: 'Leer wat te doen bij verschillende noodsituaties en hoe je je het beste kunt voorbereiden.',
+    url: '/situaties',
+    image: '/images/situaties.jpg',
+    iconColor: 'accent' as const,
+  },
+  {
+    title: 'Tools',
+    description: 'Gebruik onze handige calculators en checklists om je voorbereiding te plannen.',
+    url: '/tools',
+    image: '/images/tools.jpg',
+    iconColor: 'primary' as const,
+  },
+  {
+    title: 'Gidsen',
+    description: 'Stap-voor-stap gidsen voor crisisvoorbereiding en het samenstellen van noodpakketten.',
+    url: '/gidsen',
+    image: '/images/gidsen.jpg',
+    iconColor: 'accent' as const,
+  },
+  {
+    title: 'Vergelijkingen',
+    description: 'Vergelijk producten en vind de beste keuze voor jouw noodpakket en voorbereiding.',
+    url: '/vergelijking',
+    image: '/images/vergelijking.jpg',
+    iconColor: 'primary' as const,
+  },
+  {
+    title: 'Kennisbank',
+    description: 'Begrippen, veelgestelde vragen en uitgebreide informatie over crisisvoorbereiding.',
+    url: '/kennisbank',
+    image: '/images/kennisbank.jpg',
+    iconColor: 'accent' as const,
+  },
+];
+---
+
+<BaseLayout seo={seoConfig}>
+  <!-- Hero Section - Modern Split Layout -->
+  <section class="hero">
+    <div class="container-custom hero-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="text-white">
+          <h1 class="text-balance">
+            Bereid je voor op noodsituaties met vertrouwen
+          </h1>
+          <p class="text-balance">
+            De meest complete en betrouwbare bron voor noodpakketten en crisisvoorbereiding in Nederland. 
+            Leer hoe je jezelf en je gezin goed voorbereidt met praktische gidsen en tools.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="/noodpakketten" class="btn-accent">
+              Begin met Noodpakketten
+            </a>
+            <a href="/tools/noodpakket-checklist" class="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
+              Gebruik Checklist
+            </a>
+          </div>
+          
+          <!-- Trust indicators -->
+          <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/20">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span class="text-sm text-white/90">Gebaseerd op officiële richtlijnen</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span class="text-sm text-white/90">Praktische tools & checklists</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Element -->
+        <div class="hero-visual hidden lg:block relative">
+          <div class="hero-pattern"></div>
+          <div class="relative z-10 h-full flex items-center justify-center p-8">
+            <div class="w-full max-w-md space-y-6">
+              <!-- Emergency kit image -->
+              <div class="relative">
+                <img 
+                  src="/images/noodpakket.png" 
+                  alt="Noodpakket voorbereiding - Emergency kit items"
+                  class="w-full h-auto rounded-2xl shadow-2xl object-cover"
+                />
+              </div>
+              
+              <!-- Quick stats below image -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
+                  <div class="text-2xl font-bold text-white mb-1">72u</div>
+                  <div class="text-xs text-white/80">Zelfredzaamheid</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
+                  <div class="text-2xl font-bold text-white mb-1">100+</div>
+                  <div class="text-xs text-white/80">Gidsen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section section-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-balance">Ontdek Onze Categorieën</h2>
+        <p class="text-lg text-neutral-600 text-balance">
+          Kies een categorie om te beginnen met je voorbereiding op noodsituaties. 
+          Elke categorie bevat uitgebreide informatie, praktische tools en stap-voor-stap gidsen.
+        </p>
+      </div>
+      <CardGrid columns={3}>
+        {silos.map((silo) => (
+          <Card
+            title={silo.title}
+            description={silo.description}
+            url={silo.url}
+            image={silo.image}
+            iconColor={silo.iconColor}
+          />
+        ))}
+      </CardGrid>
+    </div>
+  </section>
+
+  <!-- CTA Section - Compact & Content-Rich -->
+  <section class="section-tight section-light">
+    <div class="container-custom">
+      <div class="cta-compact max-w-5xl mx-auto">
+        <div class="cta-compact-grid">
+          <div class="cta-stat">
+            <div class="cta-stat-number">100+</div>
+            <div class="cta-stat-label">Praktische gidsen</div>
+          </div>
+          <div class="cta-stat">
+            <div class="cta-stat-number">11</div>
+            <div class="cta-stat-label">Interactieve tools</div>
+          </div>
+          <div class="cta-stat">
+            <div class="cta-stat-number">24/7</div>
+            <div class="cta-stat-label">Toegankelijk</div>
+          </div>
+        </div>
+        
+        <div class="border-t border-neutral-200 pt-6">
+          <h3 class="text-2xl md:text-3xl font-bold mb-3">Begin vandaag met je voorbereiding</h3>
+          <p class="text-neutral-600 mb-6">
+            Gebruik onze checklist en calculators om te zien wat je nodig hebt voor jouw specifieke situatie. 
+            Start direct met het samenstellen van je persoonlijke noodpakket.
+          </p>
+          <a href="/tools/noodpakket-checklist" class="btn-primary">
+            Start nu met Checklist
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section section-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-balance">Waarom Noodpakket Center?</h2>
+        <p class="text-lg text-neutral-600 text-balance">
+          We helpen je op een betrouwbare en praktische manier voorbereiden op noodsituaties.
+          Onze informatie is gebaseerd op officiële richtlijnen en best practices.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card">
+          <div class="w-16 h-16 bg-primary-500 rounded-xl flex items-center justify-center mb-6 shadow-medium">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Betrouwbaar</h3>
+          <p class="text-neutral-600">
+            Informatie gebaseerd op officiële richtlijnen van Rijksoverheid en Rode Kruis. 
+            We zorgen ervoor dat alle adviezen actueel en accuraat zijn.
+          </p>
+        </div>
+        
+        <div class="card">
+          <div class="w-16 h-16 bg-accent-500 rounded-xl flex items-center justify-center mb-6 shadow-medium">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Compleet</h3>
+          <p class="text-neutral-600">
+            Alles wat je nodig hebt op één plek: gidsen, tools, checklists en vergelijkingen. 
+            Van basisvoorbereiding tot geavanceerde crisisplannen.
+          </p>
+        </div>
+        
+        <div class="card">
+          <div class="w-16 h-16 bg-success-500 rounded-xl flex items-center justify-center mb-6 shadow-medium">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Praktisch</h3>
+          <p class="text-neutral-600">
+            Handige tools en checklists die je direct kunt gebruiken voor jouw situatie. 
+            Geen theoretische kennis, maar concrete actiestappen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

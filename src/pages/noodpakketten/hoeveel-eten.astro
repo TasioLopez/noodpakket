@@ -1,0 +1,89 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Hoeveel Eten Heb Je Nodig?</h2>
+<p>Bij noodsituaties is het belangrijk om voldoende voedsel beschikbaar te hebben. Hier leer je hoeveel voedsel je nodig hebt per persoon en hoe je dit berekent.</p>
+
+<h3>Basisrichtlijnen</h3>
+<p>De algemene richtlijn voor calorieën:</p>
+<ul>
+  <li><strong>Volwassene:</strong> 2000 kcal per dag</li>
+  <li><strong>Kind (5-12 jaar):</strong> 1500 kcal per dag</li>
+  <li><strong>Baby:</strong> 800 kcal per dag</li>
+</ul>
+
+<h3>Voedselvoorraad Berekenen</h3>
+<p>Voor een 72-uurs voorraad:</p>
+<ul>
+  <li>Volwassene: 2000 kcal × 3 dagen = 6000 kcal</li>
+  <li>Kind: 1500 kcal × 3 dagen = 4500 kcal</li>
+  <li>Baby: 800 kcal × 3 dagen = 2400 kcal</li>
+</ul>
+
+<h3>Gewicht van Voedsel</h3>
+<p>Richtlijnen voor gewicht:</p>
+<ul>
+  <li>Ongeveer 1 kg voedsel = 2500-3000 calorieën</li>
+  <li>Voor 6000 kcal heb je ongeveer 2-2,5 kg voedsel nodig</li>
+  <li>Dit verschilt per type voedsel (blik is zwaarder, gedroogd lichter)</li>
+</ul>
+
+<h3>Voorbeelden</h3>
+<p>Voorbeelden van 2000 kcal voedsel:</p>
+<ul>
+  <li>3-4 blikken bonen + 1 kg rijst</li>
+  <li>2 noodmaaltijden (MRE) + snacks</li>
+  <li>Verschillende blikvoedsel combinaties</li>
+  <li>Gedroogd voedsel + blikvoedsel mix</li>
+</ul>
+
+<h3>Belangrijke Overwegingen</h3>
+<p>Houd rekening met:</p>
+<ul>
+  <li>Voorkeuren van je gezin</li>
+  <li>Allergieën en dieetbeperkingen</li>
+  <li>Bereidingsmogelijkheden (kookgelegenheid)</li>
+  <li>Houdbaarheid en opslag</li>
+  <li>Voedingswaarde (niet alleen calorieën)</li>
+</ul>
+`;
+
+const tips = [
+  'Bereken ruim - stress verhoogt caloriebehoefte',
+  'Varieer in soorten voedsel voor voedingswaarde',
+  'Kies voedsel dat je gezin normaal ook eet',
+  'Overweeg gemakkelijke bereiding (geen kookgelegenheid nodig)',
+  'Roteer je voorraad regelmatig',
+];
+
+const faqs = [
+  {
+    question: 'Is 2000 kcal per dag genoeg?',
+    answer: '2000 kcal is normaal voor een volwassene in rust. Bij stress of inspanning kan je meer nodig hebben. Plan daarom altijd ruim.',
+  },
+  {
+    question: 'Wat is het beste voedsel voor noodvoorraad?',
+    answer: 'Lang houdbaar voedsel zoals blikvoedsel, gedroogde producten en noodmaaltijden. Kies producten die je gezin normaal ook eet en die voedingswaarde hebben.',
+  },
+  {
+    question: 'Hoe bewaar ik voedsel het beste?',
+    answer: 'Bewaar voedsel op een koele, droge, donkere plek. Controleer regelmatig houdbaarheidsdata. Rotate je voorraad door oud voedsel te gebruiken en nieuw bij te vullen.',
+  },
+];
+---
+
+<Subpage
+  title="Hoeveel Eten Heb Je Nodig?"
+  description="Leer hoeveel voedsel je nodig hebt tijdens noodsituaties. Richtlijnen voor calorieën, gewicht, en hoe je je voedselvoorraad berekent."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="hoeveel-eten"
+  keywords={['hoeveel eten', 'voedsel berekenen', 'voedselvoorraad', 'calorieën per dag']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Hoeveel Eten Heb Je Nodig? - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoeveel voedsel je nodig hebt tijdens noodsituaties. Richtlijnen voor calorieën, gewicht en tips voor je voedselvoorraad."
+/>
+
+

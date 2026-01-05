@@ -1,0 +1,20 @@
+---
+import { getSingleton } from 'astro:content';
+import PillarPage from '../../components/templates/PillarPage.astro';
+
+const pillar = await getSingleton('toolsPillar');
+const data = pillar.data;
+const introContent = data.introContent ? (await pillar.render()).html : undefined;
+---
+
+<PillarPage
+  title={data.title || 'Tools'}
+  description={data.description || 'Gebruik onze handige tools om je noodpakket te plannen. Calculators, checklists en generators voor een complete crisisvoorbereiding.'}
+  silo="tools"
+  keywords={data.keywords || ['tools', 'calculator', 'checklist', 'noodpakket tools']}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle || 'Tools - Handige Rekenmachines en Checklists | Noodpakket Center'}
+  seoDescription={data.seoDescription || 'Gebruik onze handige tools om je noodpakket te plannen. Calculators, checklists en generators voor een complete crisisvoorbereiding.'}
+  introContent={introContent}
+  whatYoullFind={data.whatYoullFind || []}
+/>

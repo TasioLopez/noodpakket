@@ -1,0 +1,70 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Wat is de 72-Uur Regel?</h2>
+<p>De 72-uurs regel is een belangrijke richtlijn voor crisisvoorbereiding die stelt dat je minimaal 72 uur (3 dagen) zelfstandig moet kunnen overleven zonder hulp van buitenaf.</p>
+
+<h3>Oorsprong van de Regel</h3>
+<p>Deze regel is gebaseerd op ervaringen van hulporganisaties zoals het Rode Kruis en overheidsinstanties. In de meeste noodsituaties duurt het ongeveer 72 uur voordat georganiseerde hulp op grote schaal beschikbaar is.</p>
+
+<h3>Waarom 72 Uur?</h3>
+<p>Er zijn verschillende redenen waarom 72 uur als minimum wordt aangeraden:</p>
+<ul>
+  <li><strong>Tijd voor hulporganisaties:</strong> Het duurt meestal 2-3 dagen voordat hulporganisaties op grote schaal kunnen reageren</li>
+  <li><strong>Kritieke periode:</strong> De eerste 72 uur zijn vaak het meest kritiek in een noodsituatie</li>
+  <li><strong>Haalbaarheid:</strong> Een 72-uurs voorraad is realistisch en betaalbaar voor de meeste huishoudens</li>
+  <li><strong>Bewezen effectiviteit:</strong> Veel overlevenden hadden voldoende aan een 72-uurs voorraad</li>
+</ul>
+
+<h3>Wat Betekent Dit in de Praktijk?</h3>
+<p>Voor een 72-uurs noodpakket heb je nodig:</p>
+<ul>
+  <li>Minimaal 9 liter water per persoon (3 liter per dag)</li>
+  <li>Voldoende voedsel voor 3 dagen (ongeveer 6000 kcal per volwassene)</li>
+  <li>Essentiële items zoals EHBO-set, zaklamp, radio</li>
+  <li>Belangrijke documenten en contactgegevens</li>
+</ul>
+
+<h3>Is 72 Uur Voldoende?</h3>
+<p>72 uur is het <strong>minimum</strong> dat wordt aangeraden. Voor langere noodsituaties, of als je in een risicovol gebied woont, is het verstandig om een uitgebreidere voorraad aan te leggen van 1 week of langer.</p>
+`;
+
+const tips = [
+  'Begin met 72 uur - het is beter om een basis voorraad te hebben dan niets',
+  'Bouw geleidelijk uit naar een langere voorraad als je dat wilt',
+  'Controleer je 72-uurs voorraad regelmatig',
+  'Test je voorbereiding door te simuleren wat je zou doen',
+  'Zorg dat alle gezinsleden weten waar het noodpakket staat',
+];
+
+const faqs = [
+  {
+    question: 'Waarom precies 72 uur en niet langer?',
+    answer: '72 uur is het minimum dat wordt aangeraden. Het is gebaseerd op de gemiddelde tijd die hulporganisaties nodig hebben om op grote schaal te kunnen reageren. Voor langere noodsituaties is meer beter.',
+  },
+  {
+    question: 'Is 72 uur echt voldoende?',
+    answer: '72 uur is het minimum. In de meeste gevallen is dit voldoende, maar voor risicovolle gebieden of langere noodsituaties is een uitgebreidere voorraad aan te raden.',
+  },
+  {
+    question: 'Hoeveel kost een 72-uurs noodpakket?',
+    answer: 'Een 72-uurs noodpakket voor één persoon kost ongeveer €50-100. Voor een gezin van 4 personen reken op €200-400, afhankelijk van wat je al hebt.',
+  },
+];
+---
+
+<Subpage
+  title="72-Uur Regel: Wat is Het?"
+  description="Leer alles over de 72-uurs regel voor crisisvoorbereiding. Waarom 72 uur, wat heb je nodig, en is het voldoende?"
+  content={content}
+  silo="kennisbank"
+  pageSlug="72-uur-regel"
+  keywords={['72 uur', '72-uurs regel', 'crisisvoorbereiding', 'noodvoorraad']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="72-Uur Regel - Alles Wat Je Moet Weten | Noodpakket Center"
+  seoDescription="Leer alles over de 72-uurs regel voor crisisvoorbereiding. Waarom 72 uur, wat heb je nodig, en hoe bereid je je voor."
+/>
+
+

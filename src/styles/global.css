@@ -1,0 +1,426 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 font-sans;
+    @apply antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-neutral-900;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-display md:text-display;
+    font-weight: 700;
+    color: #0A4A6B;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+    font-weight: 700;
+    color: #0A4A6B;
+    margin-bottom: 1.25rem;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+    font-weight: 600;
+    color: #0A4A6B;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    @apply mb-4;
+    line-height: 1.7;
+    color: #262626;
+  }
+
+  a {
+    @apply text-primary-500 no-underline;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    @apply text-primary-600;
+  }
+
+  /* Links in content get underline on hover */
+  .prose-custom a,
+  article a,
+  p a {
+    @apply text-primary-500 no-underline;
+  }
+
+  .prose-custom a:hover,
+  article a:hover,
+  p a:hover {
+    @apply text-primary-600 underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+    outline-style: solid;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply mb-4 ml-6;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply mb-2;
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  /* Container System */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .section-tight {
+    @apply py-12 md:py-16;
+  }
+
+  /* Modern Button System */
+  .btn {
+    @apply inline-flex items-center justify-center;
+    @apply px-6 py-3 font-semibold text-base;
+    @apply rounded-lg;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white;
+    @apply hover:bg-primary-600;
+    @apply focus:ring-primary-500;
+    box-shadow: 0 2px 8px rgba(10, 74, 107, 0.2);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(10, 74, 107, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-500 text-white;
+    @apply hover:bg-accent-600;
+    @apply focus:ring-accent-500;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+  }
+
+  .btn-accent:hover {
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-primary-500;
+    @apply border-2 border-primary-500;
+    @apply hover:bg-primary-50;
+    @apply focus:ring-primary-500;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-primary-500;
+    @apply hover:bg-primary-50;
+    @apply focus:ring-primary-500;
+  }
+
+  /* Modern Card System */
+  .card {
+    @apply bg-white rounded-xl p-6;
+    @apply border border-neutral-200;
+    @apply transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    border-color: #0A4A6B;
+  }
+
+  .card-featured {
+    @apply card;
+    @apply border-2 border-primary-500;
+    box-shadow: 0 4px 16px rgba(10, 74, 107, 0.15);
+  }
+
+  /* Hero Section - Modern Split Layout */
+  .hero {
+    @apply relative overflow-hidden;
+    @apply py-20 md:py-28 lg:py-32;
+    background: linear-gradient(135deg, #0A4A6B 0%, #083B56 50%, #062C41 100%);
+  }
+
+  .hero::before {
+    content: '';
+    @apply absolute inset-0;
+    background: 
+      radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    @apply absolute inset-0;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    @apply relative z-10;
+  }
+
+  .hero h1 {
+    @apply text-white mb-5 md:mb-6;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+
+  .hero p {
+    @apply text-white/95 text-lg md:text-xl mb-8 md:mb-10;
+    line-height: 1.6;
+    max-width: 32rem;
+  }
+
+  .hero-visual {
+    @apply relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-visual img {
+    @apply relative z-10;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+  }
+
+  .hero-pattern {
+    @apply absolute inset-0;
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.4;
+  }
+
+  /* Section Backgrounds */
+  .section-light {
+    @apply bg-neutral-50;
+  }
+
+  .section-white {
+    @apply bg-white;
+  }
+
+  .section-primary {
+    @apply bg-primary-500 text-white;
+  }
+
+  .section-primary h2,
+  .section-primary h3 {
+    @apply text-white;
+    color: white;
+  }
+
+  /* Callout/Alert System */
+  .callout {
+    @apply p-6 rounded-xl my-6;
+    @apply border-l-4;
+  }
+
+  .callout-info {
+    @apply callout bg-primary-50 border-primary-500;
+  }
+
+  .cta-compact {
+    @apply bg-white rounded-2xl p-8 md:p-10;
+    @apply border border-neutral-200;
+    box-shadow: 0 4px 24px rgba(10, 74, 107, 0.08);
+  }
+
+  .cta-compact-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-6;
+  }
+
+  .cta-stat {
+    @apply text-center md:text-left;
+  }
+
+  .cta-stat-number {
+    @apply text-3xl md:text-4xl font-bold text-primary-500 mb-1;
+  }
+
+  .cta-stat-label {
+    @apply text-sm text-neutral-600;
+  }
+
+  .callout-warning {
+    @apply callout bg-accent-50 border-accent-500;
+  }
+
+  .callout-success {
+    @apply callout bg-success-50 border-success-500;
+  }
+
+  /* Prose Content Styling */
+  .prose-custom {
+    @apply max-w-none;
+  }
+
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    @apply font-display font-bold text-primary-500 mb-4 mt-8;
+  }
+
+  .prose-custom h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  .prose-custom h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .prose-custom h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  .prose-custom p {
+    @apply text-neutral-700 mb-4;
+    line-height: 1.7;
+  }
+
+  .prose-custom strong {
+    @apply font-semibold text-neutral-900;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    @apply text-neutral-700 mb-4 ml-6;
+  }
+
+  .prose-custom li {
+    @apply mb-2;
+  }
+
+  .prose-custom img {
+    @apply rounded-xl my-6;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Grid System */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  /* Utility Classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Decorative Elements */
+  .decorative-blob {
+    @apply absolute rounded-full opacity-10;
+    filter: blur(60px);
+  }
+
+  /* Logo styling - remove white background from favicon */
+  .logo-transparent {
+    background: transparent;
+  }
+
+  /* Make white backgrounds in favicon transparent on white header */
+  header .logo-transparent {
+    mix-blend-mode: multiply;
+  }
+
+  /* Alternative: If mix-blend-mode doesn't work well, use filter to remove white */
+  @supports not (mix-blend-mode: multiply) {
+    header .logo-transparent {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(180deg) brightness(95%) contrast(87%);
+    }
+  }
+}

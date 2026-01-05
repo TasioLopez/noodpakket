@@ -1,0 +1,79 @@
+---
+const navigationItems = [
+  { label: 'Noodpakketten', url: '/noodpakketten' },
+  { label: 'Situaties', url: '/situaties' },
+  { label: 'Tools', url: '/tools' },
+  { label: 'Gidsen', url: '/gidsen' },
+  { label: 'Vergelijkingen', url: '/vergelijking' },
+  { label: 'Kennisbank', url: '/kennisbank' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="hidden md:flex items-center space-x-6" aria-label="Hoofdnavigatie">
+  {navigationItems.map((item) => {
+    const isActive = currentPath.startsWith(item.url);
+    return (
+      <a
+        href={item.url}
+        class={`font-semibold text-sm transition-colors no-underline ${
+          isActive
+            ? 'text-primary-500'
+            : 'text-neutral-700 hover:text-primary-500'
+        }`}
+      >
+        {item.label}
+      </a>
+    );
+  })}
+</nav>
+
+<!-- Mobile menu button -->
+<button
+  id="mobile-menu-button"
+  class="md:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 transition-colors"
+  aria-label="Menu openen"
+  aria-expanded="false"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- Mobile menu -->
+<div
+  id="mobile-menu"
+  class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 shadow-large"
+>
+  <div class="container-custom py-4 space-y-1">
+    {navigationItems.map((item) => {
+      const isActive = currentPath.startsWith(item.url);
+      return (
+        <a
+          href={item.url}
+          class={`block px-4 py-3 rounded-lg font-semibold transition-colors no-underline ${
+            isActive
+              ? 'bg-primary-50 text-primary-500'
+              : 'text-neutral-700 hover:bg-neutral-100'
+          }`}
+        >
+          {item.label}
+        </a>
+      );
+    })}
+  </div>
+</div>
+
+<script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

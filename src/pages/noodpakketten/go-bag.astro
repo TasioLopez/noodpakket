@@ -1,0 +1,99 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Go-Bag (Evacuatietas)</h2>
+<p>Een go-bag is een lichtgewicht, draagbare tas met essentiële items die je snel kunt meenemen bij evacuatie. Het is anders dan een thuis noodpakket omdat het ontworpen is om mee te nemen.</p>
+
+<h3>Wat is een Go-Bag?</h3>
+<p>Een go-bag is een compacte evacuatietas die:</p>
+<ul>
+  <li>Licht genoeg is om comfortabel te dragen (5-10 kg)</li>
+  <li>Alle essentiële items bevat voor 72 uur</li>
+  <li>Snel gepakt kan worden (binnen minuten)</li>
+  <li>Waterdicht of waterbestendig is</li>
+  <li>Comfortabel te dragen is over langere afstanden</li>
+</ul>
+
+<h3>Verschil met Thuis Noodpakket</h3>
+<p>Een go-bag verschilt van een thuis noodpakket:</p>
+<ul>
+  <li><strong>Go-Bag:</strong> Lichtgewicht, draagbaar, voor evacuatie</li>
+  <li><strong>Thuis Noodpakket:</strong> Groter, blijft thuis, volledigere voorraad</li>
+</ul>
+
+<h3>Essentiële Items</h3>
+<p>Elke go-bag moet bevatten:</p>
+<ul>
+  <li>Water (1-2 liter + zuivering)</li>
+  <li>Energierepen en compact voedsel</li>
+  <li>Compacte EHBO-set</li>
+  <li>Zaklamp met batterijen</li>
+  <li>Powerbank voor telefoon</li>
+  <li>Kopie belangrijke documenten</li>
+  <li>Contant geld (€200-500)</li>
+  <li>Lichtgewicht deken</li>
+  <li>Poncho of regenjas</li>
+</ul>
+`;
+
+const checklist = [
+  'Waterflessen (1-2 liter)',
+  'Waterzuivering tabletten',
+  'Energierepen (minimaal 6)',
+  'Noten en gedroogd fruit',
+  'Compacte EHBO-set',
+  'Pijnstillers',
+  'Persoonlijke medicijnen',
+  'Zaklamp met extra batterijen',
+  'Powerbank (opgeladen)',
+  'Kopie ID en belangrijke documenten',
+  'Contactgegevens (op papier)',
+  'Contant geld (€200-500)',
+  'Lichtgewicht deken of slaapzak',
+  'Poncho of regenjas',
+  'Multitool of zakmes',
+  'Whistle (fluitje)',
+  'Kaart van gebied',
+];
+
+const tips = [
+  'Houd je go-bag bij de voordeur of makkelijk bereikbaar',
+  'Test het gewicht regelmatig - idealiter 5-10 kg',
+  'Controleer maandelijks de inhoud',
+  'Zorg dat powerbank en batterijen opgeladen zijn',
+  'Pas het aan per seizoen (winter items in winter)',
+  'Oefen het snel pakken van je go-bag',
+];
+
+const faqs = [
+  {
+    question: 'Hoe zwaar moet een go-bag zijn?',
+    answer: 'Idealiter tussen 5-10 kg. Test het gewicht door de tas 30 minuten te dragen. Als het te zwaar is, verwijder niet-essentiële items.',
+  },
+  {
+    question: 'Waar moet ik mijn go-bag bewaren?',
+    answer: 'Bewaar het bij de voordeur of in de hal, op een makkelijk bereikbare plek. Zorg dat alle gezinsleden weten waar het staat.',
+  },
+  {
+    question: 'Hoe vaak moet ik mijn go-bag controleren?',
+    answer: 'Controleer je go-bag maandelijks. Controleer houdbaarheidsdata, laad powerbanks op, en vervang wat nodig is.',
+  },
+];
+---
+
+<Subpage
+  title="Go-Bag (Evacuatietas)"
+  description="Leer alles over go-bags (evacuatietassen). Wat het is, wat erin hoort, en hoe je er een samenstelt. Complete gids."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="go-bag"
+  keywords={['go-bag', 'evacuatietas', 'bug-out-bag', 'evacuatie']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Go-Bag - Evacuatietas Complete Gids | Noodpakket Center"
+  seoDescription="Leer alles over go-bags. Wat het is, wat erin hoort, en hoe je een perfecte evacuatietas samenstelt."
+/>
+
+

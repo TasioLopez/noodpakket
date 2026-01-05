@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import GoBagBuilder from '../../components/tools/GoBagBuilder';
+
+const faqs = [
+  {
+    question: 'Wat is het verschil tussen een go-bag en een noodpakket?',
+    answer: 'Een go-bag is een lichtgewicht evacuatietas die je snel kunt meenemen, terwijl een noodpakket groter is en bedoeld voor thuisgebruik. Beide zijn belangrijk voor verschillende scenario\'s.',
+  },
+  {
+    question: 'Hoe zwaar moet een go-bag zijn?',
+    answer: 'Een go-bag moet licht genoeg zijn om comfortabel te dragen (idealiter 5-10 kg). Focus op essentieel en lichtgewicht items die je echt nodig hebt.',
+  },
+];
+---
+
+<ToolPage
+  title="Go-Bag Builder"
+  description="Bouw je perfecte go-bag (evacuatietas) door items te selecteren. Een lichtgewicht tas die je snel kunt meenemen bij evacuatie."
+  toolComponent={GoBagBuilder}
+  silo="tools"
+  keywords={['go-bag', 'evacuatietas', 'bug-out-bag', 'evacuatie voorbereiding']}
+  faqs={faqs}
+  seoTitle="Go-Bag Builder - Bouw Je Evacuatietas | Noodpakket Center"
+  seoDescription="Bouw je perfecte go-bag met onze interactieve builder. Selecteer items en genereer een complete lijst voor je evacuatietas."
+/>
+
+

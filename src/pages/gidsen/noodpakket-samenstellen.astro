@@ -1,0 +1,76 @@
+---
+import GuidePage from '../../components/templates/GuidePage.astro';
+
+const content = `
+<h2>Hoe Stel Je een Noodpakket Samen?</h2>
+<p>Het samenstellen van een noodpakket kan overweldigend lijken, maar met deze stap-voor-stap gids maak je een compleet pakket dat perfect bij jouw situatie past.</p>
+`;
+
+const steps = [
+  {
+    title: 'Bepaal Je Behoeften',
+    content: 'Begin met het bepalen voor hoeveel personen je het noodpakket samenstelt. Houd rekening met volwassenen, kinderen en eventuele baby\'s. Bedenk ook hoe lang je zelfstandig moet kunnen overleven - minimaal 72 uur wordt aangeraden.',
+  },
+  {
+    title: 'Verzamel Water',
+    content: 'Water is het belangrijkste onderdeel. Plan minimaal 3 liter per persoon per dag. Voor een gezin van 4 personen betekent dit 36 liter voor 3 dagen. Gebruik schone flessen en bewaar ze op een koele, donkere plek.',
+  },
+  {
+    title: 'Kies Lang Houdbaar Voedsel',
+    content: 'Selecteer voedsel dat lang houdbaar is en geen koeling nodig heeft. Denk aan blikvoedsel, gedroogde producten, noten en noodmaaltijden. Zorg voor variatie en producten die je gezin normaal ook eet.',
+  },
+  {
+    title: 'Voeg EHBO Materiaal Toe',
+    content: 'Zorg voor een complete EHBO-set met verbanden, ontsmettingsmiddel, pijnstillers en eventuele voorgeschreven medicijnen. Controleer regelmatig de houdbaarheidsdata.',
+  },
+  {
+    title: 'Voeg Communicatie Toe',
+    content: 'Zorg voor een batterij-aangedreven of hand-aangedreven radio om op de hoogte te blijven. Voeg een powerbank toe voor je telefoon en overweeg een zaklamp met extra batterijen.',
+  },
+  {
+    title: 'Verzamel Belangrijke Documenten',
+    content: 'Maak kopieën van belangrijke documenten zoals ID, verzekeringspapieren en contactgegevens. Bewaar ze in een waterdichte verpakking.',
+  },
+  {
+    title: 'Voeg Persoonlijke Items Toe',
+    content: 'Voeg persoonlijke verzorgingsartikelen toe zoals tandenborstel, zeep, toiletpapier en eventuele speciale behoeften voor baby\'s of ouderen.',
+  },
+  {
+    title: 'Test en Onderhoud',
+    content: 'Test je noodpakket regelmatig. Controleer minstens 2x per jaar de houdbaarheidsdata, vervang batterijen en controleer of alles nog compleet is.',
+  },
+];
+
+const tips = [
+  'Begin klein en bouw geleidelijk uit',
+  'Houd het pakket op een makkelijk bereikbare plek',
+  'Laat alle gezinsleden weten waar het staat',
+  'Roteer voedsel regelmatig',
+  'Overweeg meerdere kleinere pakketten voor verschillende locaties',
+];
+
+const faqs = [
+  {
+    question: 'Hoeveel kost een basis noodpakket?',
+    answer: 'Een basis noodpakket voor één persoon kost ongeveer €50-100. Voor een gezin van 4 personen reken op €200-400 voor een compleet pakket.',
+  },
+  {
+    question: 'Hoe vaak moet ik mijn noodpakket controleren?',
+    answer: 'Controleer je noodpakket minimaal 2 keer per jaar. Vervang houdbaarheidsdata, controleer batterijen en zorg dat alles compleet is.',
+  },
+];
+---
+
+<GuidePage
+  title="Noodpakket Samenstellen"
+  description="Stap-voor-stap gids voor het samenstellen van je eerste noodpakket. Van water tot communicatie - we helpen je een compleet pakket te maken."
+  content={content}
+  steps={steps}
+  tips={tips}
+  keywords={['noodpakket samenstellen', 'noodpakket maken', 'noodpakket checklist']}
+  faqs={faqs}
+  seoTitle="Noodpakket Samenstellen - Stap-voor-Stap Gids | Noodpakket Center"
+  seoDescription="Leer stap-voor-stap hoe je een compleet noodpakket samenstelt. Van water tot communicatie - alles wat je moet weten."
+/>
+
+

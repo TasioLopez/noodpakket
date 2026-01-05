@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+
+<BaseLayout
+  seo={{
+    title: 'Over Ons | Noodpakket Center',
+    description: 'Leer meer over Noodpakket Center en onze missie om Nederlanders te helpen met crisisvoorbereiding.',
+    keywords: ['over ons', 'Noodpakket Center', 'over'],
+  }}
+  breadcrumbs={[{ name: 'Over ons', url: '/over-ons' }]}
+>
+  <div class="container-custom section section-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="mb-6">Over Noodpakket Center</h1>
+      
+      <div class="prose-custom">
+        <p class="text-lg text-neutral-600 mb-8">
+          Noodpakket Center is opgericht met de missie om Nederlanders te helpen zich goed voor te bereiden op noodsituaties.
+        </p>
+        
+        <h2>Onze Missie</h2>
+        <p>
+          Wij geloven dat iedereen recht heeft op betrouwbare en toegankelijke informatie over crisisvoorbereiding.
+          Onze website biedt een complete gids voor noodpakketten, situaties, tools en gidsen om je te helpen
+          goed voorbereid te zijn.
+        </p>
+        
+        <h2>Betrouwbare Informatie</h2>
+        <p>
+          Onze informatie is gebaseerd op richtlijnen van het Rode Kruis, de Rijksoverheid en andere erkende
+          instanties. We bieden praktische, realistische adviezen zonder sensationalisme.
+        </p>
+        
+        <h2>Contact</h2>
+        <p>
+          Heb je vragen of suggesties? Neem gerust contact met ons op via de <a href="/contact">contactpagina</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

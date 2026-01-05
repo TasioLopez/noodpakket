@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+
+<BaseLayout
+  seo={{
+    title: 'Disclaimer | Noodpakket Center',
+    description: 'Disclaimer van Noodpakket Center.',
+    keywords: ['disclaimer'],
+    noindex: true,
+  }}
+  breadcrumbs={[{ name: 'Disclaimer', url: '/disclaimer' }]}
+>
+  <div class="container-custom section section-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="mb-6">Disclaimer</h1>
+      
+      <div class="prose-custom">
+        <h2>Algemene Informatie</h2>
+        <p>
+          De informatie op deze website is bedoeld als algemene richtlijn voor crisisvoorbereiding.
+          Hoewel wij ons best doen om accurate en actuele informatie te verstrekken, kunnen wij
+          geen garantie geven over de volledigheid of juistheid van alle informatie.
+        </p>
+        
+        <h2>Geen Medisch Advies</h2>
+        <p>
+          De informatie op deze website is geen vervanging voor medisch advies. Raadpleeg altijd
+          een medisch professional voor gezondheidsgerelateerde vragen.
+        </p>
+        
+        <h2>Gebruik op Eigen Risico</h2>
+        <p>
+          Het gebruik van de informatie op deze website is op eigen risico. Noodpakket Center
+          is niet aansprakelijk voor eventuele schade die voortvloeit uit het gebruik van de
+          informatie op deze website.
+        </p>
+        
+        <h2>Externe Links</h2>
+        <p>
+          Onze website kan links bevatten naar externe websites. Wij zijn niet verantwoordelijk
+          voor de inhoud of privacybeleid van deze externe websites.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+

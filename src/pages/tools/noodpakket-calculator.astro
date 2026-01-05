@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import NoodpakketCalculator from '../../components/tools/NoodpakketCalculator';
+
+const faqs = [
+  {
+    question: 'Zijn de kosten schattingen accuraat?',
+    answer: 'De kosten zijn indicatief en gebaseerd op gemiddelde prijzen. Werkelijke prijzen kunnen verschillen per winkel en merk. Het geeft wel een goede indicatie van wat je ongeveer kwijt bent.',
+  },
+  {
+    question: 'Kan ik de calculator aanpassen?',
+    answer: 'Ja, je kunt alle waarden aanpassen om te zien hoe dit je noodpakket en kosten beïnvloedt. Experimenteer met verschillende scenario\'s.',
+  },
+];
+---
+
+<ToolPage
+  title="Noodpakket Calculator"
+  description="Bereken wat je nodig hebt voor een compleet noodpakket op maat. Van water en voedsel tot essentiële items en geschatte kosten."
+  toolComponent={NoodpakketCalculator}
+  silo="tools"
+  keywords={['noodpakket calculator', 'noodpakket berekenen', 'noodpakket kosten', 'crisisvoorbereiding']}
+  faqs={faqs}
+  seoTitle="Noodpakket Calculator - Bereken Je Complete Noodpakket | Noodpakket Center"
+  seoDescription="Bereken wat je nodig hebt voor een compleet noodpakket. Inclusief water, voedsel, essentiële items en geschatte kosten."
+/>
+
+

@@ -1,0 +1,26 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<header class="bg-white border-b border-neutral-200 sticky top-0 z-50 shadow-soft">
+  <div class="container-custom">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-3 group no-underline">
+          <div class="w-12 h-12 flex items-center justify-center">
+            <img 
+              src="/favicon.ico" 
+              alt="Noodpakket Center logo" 
+              class="w-full h-full object-contain logo-transparent"
+            />
+          </div>
+          <span class="text-xl md:text-2xl font-display font-bold text-primary-500 group-hover:text-primary-600 transition-colors">
+            Noodpakket Center
+          </span>
+        </a>
+      </div>
+      
+      <Navigation />
+    </div>
+  </div>
+</header>

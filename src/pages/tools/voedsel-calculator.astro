@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import FoodCalculator from '../../components/tools/FoodCalculator';
+
+const faqs = [
+  {
+    question: 'Hoeveel calorieën heeft een persoon per dag nodig?',
+    answer: 'Een volwassene heeft ongeveer 2000 kcal per dag nodig, een kind 1500 kcal en een baby 800 kcal. Dit zijn richtlijnen voor normale activiteit.',
+  },
+  {
+    question: 'Welk voedsel is het beste voor een noodvoorraad?',
+    answer: 'Kies voor lang houdbaar voedsel zoals blikvoedsel, gedroogde producten, en noodmaaltijden. Zorg voor variatie en kies producten die je gezin normaal ook eet.',
+  },
+];
+---
+
+<ToolPage
+  title="Voedsel Calculator"
+  description="Bereken hoeveel voedsel je nodig hebt voor je gezin tijdens een noodsituatie. Bepaal je calorieënbehoefte en gewicht van je voedselvoorraad."
+  toolComponent={FoodCalculator}
+  silo="tools"
+  keywords={['voedsel calculator', 'voedsel berekenen', 'voedsel voorraad', 'calorieën berekenen']}
+  faqs={faqs}
+  seoTitle="Voedsel Calculator - Bereken Je Voedselbehoefte | Noodpakket Center"
+  seoDescription="Bereken hoeveel voedsel je gezin nodig heeft tijdens een noodsituatie. Handige calculator voor calorieën en gewicht van je voedselvoorraad."
+/>
+
+

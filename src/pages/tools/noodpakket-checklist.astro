@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import Checklist from '../../components/tools/Checklist';
+
+const faqs = [
+  {
+    question: 'Hoe vaak moet ik mijn checklist controleren?',
+    answer: 'Het wordt aangeraden om je checklist minimaal 2 keer per jaar te controleren en bij te werken. Controleer vooral houdbaarheidsdata en vervang wat nodig is.',
+  },
+  {
+    question: 'Wordt mijn voortgang opgeslagen?',
+    answer: 'Ja, je voortgang wordt automatisch opgeslagen in je browser. Als je de pagina opnieuw bezoekt, staat je checklist er nog precies zoals je hem had achtergelaten.',
+  },
+];
+---
+
+<ToolPage
+  title="Noodpakket Checklist"
+  description="Gebruik deze interactieve checklist om te zien wat je nodig hebt in je noodpakket. Je voortgang wordt automatisch opgeslagen."
+  toolComponent={Checklist}
+  silo="tools"
+  keywords={['checklist', 'noodpakket checklist', 'noodpakket lijst', 'voorbereiding checklist']}
+  faqs={faqs}
+  seoTitle="Noodpakket Checklist - Interactieve Checklist | Noodpakket Center"
+  seoDescription="Gebruik onze interactieve checklist om je noodpakket samen te stellen. Zie direct wat je nodig hebt en houd je voortgang bij."
+/>
+
+

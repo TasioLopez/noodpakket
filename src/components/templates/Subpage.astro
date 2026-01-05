@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layout/BaseLayout.astro';
+import FAQ from '../ui/FAQ.astro';
+import RelatedPages from '../ui/RelatedPages.astro';
+import ToolSidebar from '../ui/ToolSidebar.astro';
+import { getSiblingPages, getRelatedTools, getRelatedGuides } from '@lib/internal-linking';
+import type { Silo } from '@lib/internal-linking';
+
+interface Props {
+  title: string;
+  description: string;
+  content: string;
+  silo: Silo;
+  pageSlug: string;
+  keywords?: string[];
+  checklist?: string[];
+  tips?: string[];
+  faqs?: Array<{ question: string; answer: string }>;
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+const {
+  title,
+  description,
+  content,
+  silo,
+  pageSlug,
+  keywords = [],
+  checklist = [],
+  tips = [],
+  faqs = [],
+  seoTitle,
+  seoDescription,
+} = Astro.props;
+
+const siblingPages = getSiblingPages(silo, pageSlug, 3);
+const relatedTools = getRelatedTools(keywords);
+const relatedGuides = getRelatedGuides(keywords, silo, 3);
+---
+
+<BaseLayout
+  seo={{
+    title: seoTitle || title,
+    description: seoDescription || description,
+    keywords,
+    canonical: `/${silo}/${pageSlug}`,
+  }}
+  breadcrumbs={[
+    { name: silo.charAt(0).toUpperCase() + silo.slice(1), url: `/${silo}` },
+    { name: title, url: `/${silo}/${pageSlug}` },
+  ]}
+>
+  <div class="container-custom section section-white">
+    <div class="max-w-4xl mx-auto">
+      <article>
+        <h1 class="mb-6">{title}</h1>
+        <p class="text-lg text-neutral-600 mb-8">{description}</p>
+        
+        <div class="prose-custom mb-8">
+          <div set:html={content} />
+        </div>
+        
+        {checklist.length > 0 && (
+          <section class="card mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Checklist</h2>
+            <ul class="space-y-2">
+              {checklist.map((item) => (
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-neutral-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        
+        {tips.length > 0 && (
+          <section class="callout-info mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Tips</h2>
+            <ul class="space-y-2">
+              {tips.map((tip) => (
+                <li class="flex items-start">
+                  <span class="text-primary-600 mr-2">•</span>
+                  <span class="text-neutral-700">{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </article>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+        <div class="lg:col-span-2 space-y-8">
+          {faqs.length > 0 && <FAQ faqs={faqs} />}
+          
+          {siblingPages.length > 0 && (
+            <RelatedPages pages={siblingPages} title="Gerelateerde Pagina's" />
+          )}
+          
+          {relatedGuides.length > 0 && (
+            <RelatedPages pages={relatedGuides} title="Gerelateerde Gidsen" />
+          )}
+        </div>
+        
+        {(relatedTools.length > 0) && (
+          <div class="lg:col-span-1">
+            <ToolSidebar tools={relatedTools} />
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

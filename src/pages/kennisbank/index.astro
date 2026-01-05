@@ -1,0 +1,20 @@
+---
+import { getSingleton } from 'astro:content';
+import PillarPage from '../../components/templates/PillarPage.astro';
+
+const pillar = await getSingleton('kennisbankPillar');
+const data = pillar.data;
+const introContent = data.introContent ? (await pillar.render()).html : undefined;
+---
+
+<PillarPage
+  title={data.title || 'Kennisbank'}
+  description={data.description || 'Ontdek onze kennisbank met begrippen, definities en veelgestelde vragen over noodpakketten en crisisvoorbereiding.'}
+  silo="kennisbank"
+  keywords={data.keywords || ['kennisbank', 'begrippen', 'faq', 'veelgestelde vragen']}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle || 'Kennisbank - Begrippen en Veelgestelde Vragen | Noodpakket Center'}
+  seoDescription={data.seoDescription || 'Ontdek onze kennisbank met begrippen, definities en veelgestelde vragen over noodpakketten en crisisvoorbereiding.'}
+  introContent={introContent}
+  whatYoullFind={data.whatYoullFind || []}
+/>

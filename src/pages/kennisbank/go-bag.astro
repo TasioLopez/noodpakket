@@ -1,0 +1,118 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Wat is een Go-Bag?</h2>
+<p>Een go-bag (ook wel evacuatietas of bug-out-bag genoemd) is een lichtgewicht, draagbare tas met essentiële items die je snel kunt meenemen bij evacuatie of wanneer je je huis snel moet verlaten.</p>
+
+<h3>Basisdefinitie</h3>
+<p>Een go-bag is bedoeld om binnen enkele minuten klaar te zijn voor vertrek. Het bevat alles wat je nodig hebt om 72 uur zelfstandig te functioneren, maar dan in een compacte, draagbare vorm.</p>
+
+<h3>Verschil met Noodpakket</h3>
+<p>Er zijn belangrijke verschillen tussen een go-bag en een thuis noodpakket:</p>
+
+<table>
+  <tr>
+    <th>Go-Bag</th>
+    <th>Noodpakket (Thuis)</th>
+  </tr>
+  <tr>
+    <td>Lichtgewicht en draagbaar</td>
+    <td>Groter, blijft thuis</td>
+  </tr>
+  <tr>
+    <td>Voor evacuatie</td>
+    <td>Voor thuis blijven</td>
+  </tr>
+  <tr>
+    <td>Compacte items</td>
+    <td>Volledige voorraden</td>
+  </tr>
+  <tr>
+    <td>5-10 kg gewicht</td>
+    <td>Kan veel zwaarder zijn</td>
+  </tr>
+</table>
+
+<h3>Wat Hoort er in een Go-Bag?</h3>
+<p>Een goede go-bag bevat:</p>
+
+<h4>Essentieel</h4>
+<ul>
+  <li>Water (1-2 liter + zuivering)</li>
+  <li>Energierepen en noten</li>
+  <li>EHBO-set (compact)</li>
+  <li>Zaklamp met batterijen</li>
+  <li>Powerbank voor telefoon</li>
+  <li>Kopie belangrijke documenten</li>
+  <li>Contant geld</li>
+</ul>
+
+<h4>Extra Handig</h4>
+<ul>
+  <li>Lichtgewicht deken</li>
+  <li>Poncho of regenjas</li>
+  <li>Multitool of zakmes</li>
+  <li>Hand-aangedreven radio</li>
+  <li>Whistle (fluitje)</li>
+  <li>Kaart van gebied</li>
+</ul>
+
+<h3>Gewicht en Formaat</h3>
+<p>Een go-bag moet:</p>
+<ul>
+  <li>Licht genoeg zijn om comfortabel te dragen (5-10 kg)</li>
+  <li>Groot genoeg voor alle essentiële items</li>
+  <li>Stevig genoeg om zwaar gebruik te doorstaan</li>
+  <li>Waterdicht of waterbestendig zijn</li>
+</ul>
+
+<h3>Waarom een Go-Bag?</h3>
+<p>Een go-bag is belangrijk omdat:</p>
+<ul>
+  <li>Je vaak maar minuten hebt om te evacueren</li>
+  <li>Je niet alles kunt meenemen</li>
+  <li>Essentiële items dan al klaar zijn</li>
+  <li>Het stress vermindert in noodsituaties</li>
+  <li>Het je overlevingskansen vergroot</li>
+</ul>
+`;
+
+const tips = [
+  'Houd je go-bag op een makkelijk bereikbare plek (bij de voordeur)',
+  'Test regelmatig of je hem comfortabel kunt dragen',
+  'Controleer maandelijks de inhoud',
+  'Pas het aan per seizoen',
+  'Oefen met je gezin hoe je snel vertrekt',
+];
+
+const faqs = [
+  {
+    question: 'Hoe zwaar moet een go-bag zijn?',
+    answer: 'Idealiter 5-10 kg, zodat je hem comfortabel kunt dragen. Test het gewicht door de tas 30 minuten te dragen.',
+  },
+  {
+    question: 'Waar moet ik mijn go-bag bewaren?',
+    answer: 'Bewaar het op een makkelijk bereikbare plek, bij voorkeur bij de voordeur of in de hal. Zorg dat iedereen weet waar het staat.',
+  },
+  {
+    question: 'Moet iedereen in het gezin een eigen go-bag hebben?',
+    answer: 'Het is handig als elk gezinslid een eigen go-bag heeft, maar zorg dat deze geschikt is voor hun leeftijd. Volwassenen kunnen helpen met zware items.',
+  },
+];
+---
+
+<Subpage
+  title="Wat is een Go-Bag?"
+  description="Leer alles over go-bags (evacuatietassen). Wat het is, waarom je het nodig hebt, en wat erin hoort. Complete uitleg."
+  content={content}
+  silo="kennisbank"
+  pageSlug="go-bag"
+  keywords={['go-bag', 'evacuatietas', 'bug-out-bag', 'evacuatie']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Wat is een Go-Bag? - Complete Uitleg | Noodpakket Center"
+  seoDescription="Leer alles over go-bags (evacuatietassen). Wat het is, wat erin hoort, en waarom je er een nodig hebt. Complete gids."
+/>
+
+

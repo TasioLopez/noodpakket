@@ -1,0 +1,46 @@
+---
+import { generateBreadcrumbSchema } from '@lib/seo';
+import type { BreadcrumbItem } from '@lib/internal-linking';
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+if (items.length === 0) {
+  return null;
+}
+
+const breadcrumbSchema = generateBreadcrumbSchema(items);
+---
+
+<nav aria-label="Breadcrumb" class="bg-neutral-50 border-b border-neutral-200">
+  <div class="container-custom py-2">
+    <ol class="flex items-center space-x-2 text-sm">
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <li class="flex items-center">
+            {index > 0 && (
+              <svg class="w-4 h-4 text-neutral-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            )}
+            {isLast ? (
+              <span class="text-neutral-900 font-semibold" aria-current="page">
+                {item.name}
+              </span>
+            ) : (
+              <a href={item.url} class="text-neutral-600 hover:text-primary-500 transition-colors no-underline">
+                {item.name}
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

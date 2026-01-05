@@ -1,0 +1,32 @@
+---
+import Card from './Card.astro';
+import type { PageLink } from '@lib/internal-linking';
+
+interface Props {
+  pages: PageLink[];
+  title?: string;
+  class?: string;
+}
+
+const { pages, title = 'Gerelateerde Pagina\'s', class: className = '' } = Astro.props;
+
+if (!pages || pages.length === 0) {
+  return null;
+}
+---
+
+<section class={`${className}`}>
+  <h2 class="text-2xl font-semibold text-neutral-900 mb-6">{title}</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {pages.map((page) => (
+      <Card
+        title={page.title}
+        description={page.description}
+        url={page.url}
+      />
+    ))}
+  </div>
+</section>
+
+

@@ -1,0 +1,106 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Noodpakket voor Auto</h2>
+<p>Een noodpakket voor in de auto is essentieel voor iedereen die regelmatig rijdt. Auto-pech, ongelukken of onverwachte situaties kunnen overal gebeuren, en met een goed gevulde auto noodpakket ben je voorbereid.</p>
+
+<h3>Waarom een Auto Noodpakket?</h3>
+<p>Een auto noodpakket helpt je bij:</p>
+<ul>
+  <li>Auto-pech en panne</li>
+  <li>Ongevallen en eerste hulp</li>
+  <li>Extreem weer (sneeuw, hitte)</li>
+  <li>Lange ritten en reizen</li>
+  <li>Onverwachte noodsituaties onderweg</li>
+</ul>
+
+<h3>Basisbenodigdheden</h3>
+<p>Elk auto noodpakket moet bevatten:</p>
+<ul>
+  <li>EHBO-set speciaal voor auto</li>
+  <li>Waarschuwingsdriehoek</li>
+  <li>Gevarenhesje (geel/oranje)</li>
+  <li>Zaklamp met extra batterijen</li>
+  <li>Dekens of slaapzakken</li>
+  <li>Water en snacks</li>
+  <li>Startkabels</li>
+  <li>Reservewiel controle (of bandenreparatieset)</li>
+</ul>
+
+<h3>Seizoenspecifieke Items</h3>
+<p>Pas je auto noodpakket aan aan het seizoen:</p>
+
+<h4>Winter</h4>
+<ul>
+  <li>IJskrabber en sneeuwborstel</li>
+  <li>Zand of strooizout</li>
+  <li>Extra warme kleding</li>
+  <li>Handwarmers</li>
+</ul>
+
+<h4>Zomer</h4>
+<ul>
+  <li>Extra water</li>
+  <li>Zonnescherm voor ruit</li>
+  <li>Zonnebrandcrème</li>
+  <li>Pet of hoed</li>
+</ul>
+`;
+
+const checklist = [
+  'EHBO-set voor auto',
+  'Waarschuwingsdriehoek',
+  'Gevarenhesje (geel/oranje)',
+  'Zaklamp met extra batterijen',
+  'Dekens of slaapzakken (2x)',
+  'Water (minimaal 2 liter)',
+  'Lang houdbare snacks',
+  'Startkabels',
+  'Reservewiel of bandenreparatieset',
+  'Eerste hulp handleiding',
+  'Contactgegevens pechhulp',
+  'Telefoon oplader voor auto',
+  'Kaart van Nederland',
+  'Contant geld (€50-100)',
+];
+
+const tips = [
+  'Houd het pakket in de kofferbak, niet in de auto zelf (temperatuur)',
+  'Controleer regelmatig houdbaarheidsdata',
+  'Pas het pakket aan per seizoen',
+  'Test je reservewiel regelmatig',
+  'Zorg dat alle gezinsleden weten waar het pakket is',
+];
+
+const faqs = [
+  {
+    question: 'Waar moet ik het auto noodpakket bewaren?',
+    answer: 'Bewaar het in de kofferbak, bij voorkeur in een doos of tas. Zorg dat het niet in de weg ligt maar wel makkelijk bereikbaar is.',
+  },
+  {
+    question: 'Hoe vaak moet ik het auto noodpakket controleren?',
+    answer: 'Controleer het pakket minstens 2 keer per jaar, vooral voor het winterseizoen. Controleer houdbaarheidsdata en vervang wat nodig is.',
+  },
+  {
+    question: 'Is een auto noodpakket verplicht?',
+    answer: 'Een waarschuwingsdriehoek en gevarendriehoek zijn verplicht in Nederland. Een compleet noodpakket wordt sterk aangeraden maar is niet verplicht.',
+  },
+];
+---
+
+<Subpage
+  title="Noodpakket voor Auto"
+  description="Leer hoe je een compleet noodpakket voor je auto samenstelt. Essentieel voor auto-pech, ongelukken en onverwachte situaties onderweg."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="auto"
+  keywords={['auto noodpakket', 'auto voorbereiding', 'auto pech', 'reizen voorbereiding']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Noodpakket voor Auto - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoe je een compleet noodpakket voor je auto samenstelt. Checklist, tips en alles wat je nodig hebt voor onderweg."
+/>
+
+

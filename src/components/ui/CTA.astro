@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  buttonText: string;
+  buttonUrl: string;
+  variant?: 'primary' | 'accent';
+  class?: string;
+}
+
+const { 
+  title, 
+  description, 
+  buttonText, 
+  buttonUrl, 
+  variant = 'primary',
+  class: className = '' 
+} = Astro.props;
+
+const buttonClass = variant === 'primary' ? 'btn-primary' : 'btn-accent';
+---
+
+<div class={`callout-info ${className}`}>
+  <h3 class="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
+  {description && (
+    <p class="mb-6 text-lg text-neutral-700">{description}</p>
+  )}
+  <a href={buttonUrl} class={buttonClass}>
+    {buttonText}
+  </a>
+</div>

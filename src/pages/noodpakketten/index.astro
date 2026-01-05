@@ -1,0 +1,20 @@
+---
+import { getSingleton } from 'astro:content';
+import PillarPage from '../../components/templates/PillarPage.astro';
+
+const pillar = await getSingleton('noodpakkettenPillar');
+const data = pillar.data;
+const introContent = data.introContent ? (await pillar.render()).html : undefined;
+---
+
+<PillarPage
+  title={data.title || 'Noodpakketten'}
+  description={data.description || 'Ontdek welk noodpakket het beste bij jou en je situatie past. Van basis noodpakketten tot uitgebreide sets voor specifieke situaties.'}
+  silo="noodpakketten"
+  keywords={data.keywords || ['noodpakket', 'noodpakketten', 'emergency kit', 'crisisvoorbereiding']}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle || 'Noodpakketten - Complete Overzicht | Noodpakket Center'}
+  seoDescription={data.seoDescription || 'Vind het perfecte noodpakket voor jouw situatie. Vergelijk verschillende types en ontdek wat je nodig hebt voor een goede crisisvoorbereiding.'}
+  introContent={introContent}
+  whatYoullFind={data.whatYoullFind || []}
+/>

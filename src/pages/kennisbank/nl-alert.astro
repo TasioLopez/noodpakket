@@ -1,0 +1,102 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Wat is NL-Alert?</h2>
+<p>NL-Alert is het Nederlandse waarschuwingssysteem voor noodsituaties. Het verzendt directe waarschuwingen naar mobiele telefoons in gebieden waar een noodsituatie plaatsvindt.</p>
+
+<h3>Basisdefinitie</h3>
+<p>NL-Alert is een systeem dat:</p>
+<ul>
+  <li>Automatisch waarschuwt bij noodsituaties</li>
+  <li>Gebiedsspecifiek is (alleen het getroffen gebied)</li>
+  <li>Direct informatie geeft over wat te doen</li>
+  <li>Beschikbaar is op alle moderne smartphones</li>
+</ul>
+
+<h3>Hoe Werkt Het?</h3>
+<p>NL-Alert werkt via:</p>
+<ul>
+  <li><strong>Cell Broadcast:</strong> Berichten worden verzonden naar alle telefoons in een bepaald gebied</li>
+  <li><strong>Geen internet nodig:</strong> Werkt ook zonder internetverbinding</li>
+  <li><strong>Automatisch:</strong> Geen app of abonnement nodig</li>
+  <li><strong>Gratis:</strong> Geen kosten verbonden</li>
+</ul>
+
+<h3>Wanneer Wordt Het Verzonden?</h3>
+<p>NL-Alert wordt verzonden bij:</p>
+<ul>
+  <li>Brand of explosie</li>
+  <li>Extreem weer</li>
+  <li>Overstroming</li>
+  <li>Gaslek of chemisch incident</li>
+  <li>Terroristische dreiging</li>
+  <li>Andere ernstige noodsituaties</li>
+</ul>
+
+<h3>Hoe Ziet een NL-Alert Eruit?</h3>
+<p>Een NL-Alert bericht bevat:</p>
+<ul>
+  <li>Waarschuwingstoon (lange piep)</li>
+  <li>Tekst met uitleg van de situatie</li>
+  <li>Instructies wat te doen</li>
+  <li>Extra informatie waar nodig</li>
+</ul>
+
+<h3>Wat te Doen?</h3>
+<p>Bij een NL-Alert:</p>
+<ul>
+  <li>Lees het bericht direct</li>
+  <li>Volg de instructies precies op</li>
+  <li>Informeer anderen in je omgeving</li>
+  <li>Luister naar radio of tv voor updates</li>
+</ul>
+
+<h3>Voorbereiding</h3>
+<p>Zorg dat:</p>
+<ul>
+  <li>NL-Alert actief is op je telefoon (meestal standaard)</li>
+  <li>Je telefoon altijd bij je hebt</li>
+  <li>Je telefoon opgeladen is</li>
+  <li>Je weet wat verschillende waarschuwingen betekenen</li>
+</ul>
+`;
+
+const tips = [
+  'NL-Alert is meestal standaard actief - controleer dit in je instellingen',
+  'Houd je telefoon altijd bij je en opgeladen',
+  'Schakel NL-Alert nooit uit',
+  'Wees alert op valse meldingen - controleer via officiële kanalen',
+  'Oefen wat je zou doen bij verschillende waarschuwingen',
+];
+
+const faqs = [
+  {
+    question: 'Werkt NL-Alert op alle telefoons?',
+    answer: 'NL-Alert werkt op alle moderne smartphones (Android en iPhone). Oudere telefoons kunnen het niet ondersteunen. Controleer of je telefoon Cell Broadcast ondersteunt.',
+  },
+  {
+    question: 'Kost NL-Alert geld?',
+    answer: 'Nee, NL-Alert is volledig gratis. Er zijn geen kosten verbonden aan het ontvangen van waarschuwingen.',
+  },
+  {
+    question: 'Kan ik NL-Alert uitzetten?',
+    answer: 'Technisch gezien kan het, maar dit wordt sterk afgeraden. NL-Alert kan levens redden bij noodsituaties. Zorg dat het altijd actief is.',
+  },
+];
+---
+
+<Subpage
+  title="NL-Alert: Wat is Het?"
+  description="Leer alles over NL-Alert: het Nederlandse waarschuwingssysteem voor noodsituaties. Hoe het werkt en wat je moet weten."
+  content={content}
+  silo="kennisbank"
+  pageSlug="nl-alert"
+  keywords={['nl-alert', 'waarschuwingssysteem', 'noodwaarschuwing', 'cell broadcast']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="NL-Alert: Wat is Het? - Complete Uitleg | Noodpakket Center"
+  seoDescription="Leer alles over NL-Alert: het Nederlandse waarschuwingssysteem. Hoe het werkt, wanneer je het ontvangt, en wat te doen."
+/>
+
+

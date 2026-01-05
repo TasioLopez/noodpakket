@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import RisicoMeter from '../../components/tools/RisicoMeter';
+
+const faqs = [
+  {
+    question: 'Wat betekent mijn risico niveau?',
+    answer: 'Je risico niveau geeft aan hoe goed je voorbereid bent op noodsituaties. Laag risico betekent goede voorbereiding, hoog risico betekent dat je nog werk te verzetten hebt.',
+  },
+  {
+    question: 'Hoe kan ik mijn risico verlagen?',
+    answer: 'Je kunt je risico verlagen door een noodpakket samen te stellen, een evacuatieplan te maken, en je voor te bereiden op specifieke risico\'s in jouw gebied.',
+  },
+];
+---
+
+<ToolPage
+  title="Risico Meter"
+  description="Bepaal je risico niveau op basis van je locatie en voorbereiding. Krijg persoonlijke aanbevelingen om je voorbereiding te verbeteren."
+  toolComponent={RisicoMeter}
+  silo="tools"
+  keywords={['risico meter', 'risico bepalen', 'voorbereiding', 'crisisvoorbereiding']}
+  faqs={faqs}
+  seoTitle="Risico Meter - Bepaal Je Risico Niveau | Noodpakket Center"
+  seoDescription="Bepaal je risico niveau voor noodsituaties. Krijg persoonlijke aanbevelingen op basis van je locatie en voorbereiding."
+/>
+
+

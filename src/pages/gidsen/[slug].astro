@@ -1,0 +1,38 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import GuidePage from '../../components/templates/GuidePage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('gidsen');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const content = await entry.render();
+
+// Transform steps from Keystatic format to GuidePage format
+const steps = (data.steps || []).map((step: any) => ({
+  title: step.title,
+  content: step.content,
+  image: step.image,
+}));
+---
+
+<GuidePage
+  title={data.title}
+  description={data.description}
+  content={content.html}
+  steps={steps}
+  tips={data.tips || []}
+  keywords={data.keywords || []}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle}
+  seoDescription={data.seoDescription}
+/>
+
+
+

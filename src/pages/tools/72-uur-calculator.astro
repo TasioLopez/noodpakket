@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import Calculator72Uur from '../../components/tools/72UurCalculator';
+
+const faqs = [
+  {
+    question: 'Waarom 72 uur?',
+    answer: 'De 72-uurs regel is gebaseerd op het feit dat professionele hulp meestal binnen 72 uur beschikbaar is. Met een 72-uurs voorraad kun je zelfstandig overleven tot hulp arriveert.',
+  },
+  {
+    question: 'Is 72 uur voldoende?',
+    answer: '72 uur is het minimum dat wordt aangeraden. Voor langere noodsituaties kun je overwegen een uitgebreidere voorraad aan te leggen van 1 week of langer.',
+  },
+];
+---
+
+<ToolPage
+  title="72-Uur Calculator"
+  description="Bereken wat je nodig hebt voor een 72-uurs noodpakket. Deze calculator helpt je een compleet pakket samen te stellen volgens de 72-uurs regel."
+  toolComponent={Calculator72Uur}
+  silo="tools"
+  keywords={['72 uur', '72-uurs regel', 'noodpakket calculator', 'crisisvoorbereiding']}
+  faqs={faqs}
+  seoTitle="72-Uur Calculator - Bereken Je 72-Uurs Noodpakket | Noodpakket Center"
+  seoDescription="Bereken wat je nodig hebt voor een 72-uurs noodpakket. Complete calculator met water, voedsel en essentiële items."
+/>
+
+

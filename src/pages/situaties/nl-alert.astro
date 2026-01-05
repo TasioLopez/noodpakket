@@ -1,0 +1,118 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>NL-Alert: Wat is Het en Wat te Doen?</h2>
+<p>NL-Alert is het Nederlandse waarschuwingssysteem voor noodsituaties. Wanneer je een NL-Alert ontvangt, is het belangrijk om te weten wat je moet doen.</p>
+
+<h3>Wat is NL-Alert?</h3>
+<p>NL-Alert is een systeem dat waarschuwt voor noodsituaties via:</p>
+<ul>
+  <li>Tekstberichten op je mobiele telefoon</li>
+  <li>Radio en televisie</li>
+  <li>Sociale media</li>
+  <li>Geluidsignalen (sirenes)</li>
+</ul>
+
+<h3>Wanneer Wordt NL-Alert Verzonden?</h3>
+<p>NL-Alert wordt verzonden bij:</p>
+<ul>
+  <li>Brand of explosie</li>
+  <li>Extreem weer (storm, hitte, kou)</li>
+  <li>Overstroming</li>
+  <li>Gaslek of chemisch incident</li>
+  <li>Terroristische dreiging</li>
+  <li>Andere ernstige noodsituaties</li>
+</ul>
+
+<h3>Wat te Doen bij NL-Alert?</h3>
+<p>Wanneer je een NL-Alert ontvangt:</p>
+
+<h4>1. Lees het Bericht Direct</h4>
+<ul>
+  <li>Stop met wat je doet</li>
+  <li>Lees het volledige bericht</li>
+  <li>Let op specifieke instructies</li>
+</ul>
+
+<h4>2. Volg de Instructies Op</h4>
+<ul>
+  <li>Volg de gegeven instructies precies op</li>
+  <li>Schakel niet tussen opties (blijf binnen of ga naar binnen)</li>
+  <li>Help anderen indien mogelijk</li>
+</ul>
+
+<h4>3. Informeer Anderen</h4>
+<ul>
+  <li>Informeer mensen in je omgeving</li>
+  <li>Deel belangrijke informatie</li>
+  <li>Maak geen paniek</li>
+</ul>
+
+<h4>4. Houd Contact</h4>
+<ul>
+  <li>Houd je telefoon bij je</li>
+  <li>Luister naar radio of tv voor updates</li>
+  <li>Blijf op de hoogte via officiële kanalen</li>
+</ul>
+
+<h3>Voorbereiding</h3>
+<p>Bereid je voor door:</p>
+<ul>
+  <li>Je telefoon altijd bij je te hebben</li>
+  <li>NL-Alert te activeren op je telefoon (meestal standaard aan)</li>
+  <li>Te weten wat je moet doen bij verschillende scenario's</li>
+  <li>Een noodpakket klaar te hebben</li>
+</ul>
+`;
+
+const checklist = [
+  'Controleer of NL-Alert actief is op je telefoon',
+  'Houd je telefoon altijd bij je',
+  'Weet wat de verschillende waarschuwingen betekenen',
+  'Heb een noodpakket klaar',
+  'Ken je vluchtroutes',
+  'Weet waar je heen moet bij evacuatie',
+  'Houd contactgegevens bij de hand',
+  'Luister naar officiële bronnen (radio, tv)',
+];
+
+const tips = [
+  'NL-Alert is meestal standaard actief op smartphones',
+  'Controleer regelmatig of je telefoon NL-Alert ondersteunt',
+  'Wees alert op valse meldingen - controleer altijd via officiële kanalen',
+  'Houd je telefoon opgeladen',
+  'Schakel NL-Alert nooit uit',
+];
+
+const faqs = [
+  {
+    question: 'Hoe weet ik of NL-Alert actief is op mijn telefoon?',
+    answer: 'NL-Alert is meestal standaard actief op smartphones in Nederland. Je kunt dit controleren in je telefoon instellingen onder "Berichten" of "Waarschuwingen".',
+  },
+  {
+    question: 'Wat als ik geen NL-Alert ontvang?',
+    answer: 'Als je geen NL-Alert ontvangt, luister dan naar radio of televisie voor updates. Volg ook officiële sociale media accounts van hulpdiensten.',
+  },
+  {
+    question: 'Moet ik altijd reageren op een NL-Alert?',
+    answer: 'Ja, neem een NL-Alert altijd serieus en volg de instructies op. Het wordt alleen verzonden bij echte noodsituaties die actie vereisen.',
+  },
+];
+---
+
+<Subpage
+  title="NL-Alert: Wat is Het en Wat te Doen?"
+  description="Leer alles over NL-Alert: wat het is, wanneer je het ontvangt, en wat je moet doen. Complete gids voor het Nederlandse waarschuwingssysteem."
+  content={content}
+  silo="situaties"
+  pageSlug="nl-alert"
+  keywords={['nl-alert', 'waarschuwingssysteem', 'noodwaarschuwing', 'nederland']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="NL-Alert: Wat is Het en Wat te Doen? | Noodpakket Center"
+  seoDescription="Leer alles over NL-Alert. Wat het is, wanneer je het ontvangt, en wat je moet doen bij een waarschuwing."
+/>
+
+

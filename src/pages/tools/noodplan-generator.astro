@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import NoodplanGenerator from '../../components/tools/NoodplanGenerator';
+
+const faqs = [
+  {
+    question: 'Hoe vaak moet ik mijn noodplan bijwerken?',
+    answer: 'Update je noodplan minstens 1 keer per jaar, of wanneer er wijzigingen zijn in je huishouden, adres, of contactgegevens. Oefen het plan regelmatig met je gezin.',
+  },
+  {
+    question: 'Moet ik mijn noodplan delen met anderen?',
+    answer: 'Ja, deel je noodplan met familie, vrienden en buren. Zorg dat belangrijke contactpersonen een kopie hebben van je plan.',
+  },
+];
+---
+
+<ToolPage
+  title="Noodplan Generator"
+  description="Genereer een compleet noodplan voor je gezin. Vul informatie in en maak een gepersonaliseerd plan dat je kunt printen of opslaan."
+  toolComponent={NoodplanGenerator}
+  silo="tools"
+  keywords={['noodplan', 'noodplan generator', 'crisisplan', 'evacuatieplan']}
+  faqs={faqs}
+  seoTitle="Noodplan Generator - Maak Je Noodplan | Noodpakket Center"
+  seoDescription="Genereer een compleet noodplan voor je gezin. Vul informatie in en maak een gepersonaliseerd plan voor noodsituaties."
+/>
+
+

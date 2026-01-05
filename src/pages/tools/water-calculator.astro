@@ -1,0 +1,28 @@
+---
+import ToolPage from '../../components/templates/ToolPage.astro';
+import WaterCalculator from '../../components/tools/WaterCalculator';
+
+const faqs = [
+  {
+    question: 'Hoeveel water heeft een persoon per dag nodig?',
+    answer: 'Voor noodsituaties wordt minimaal 3 liter per persoon per dag aangeraden: 1,5-2 liter voor drinken en 1-1,5 liter voor koken en basis hygiëne.',
+  },
+  {
+    question: 'Hoe lang blijft water houdbaar?',
+    answer: 'Gefilterd en behandeld water in afgesloten flessen blijft lang houdbaar. Controleer wel regelmatig de flessen en vervang het water minstens 1x per jaar.',
+  },
+];
+---
+
+<ToolPage
+  title="Water Calculator"
+  description="Bereken hoeveel water je nodig hebt voor je gezin tijdens een noodsituatie. Gebaseerd op richtlijnen van het Rode Kruis en Rijksoverheid."
+  toolComponent={WaterCalculator}
+  silo="tools"
+  keywords={['water calculator', 'water berekenen', 'water voorraad', 'noodvoorraad water']}
+  faqs={faqs}
+  seoTitle="Water Calculator - Bereken Je Waterbehoefte | Noodpakket Center"
+  seoDescription="Bereken hoeveel water je gezin nodig heeft tijdens een noodsituatie. Handige calculator gebaseerd op officiële richtlijnen."
+/>
+
+

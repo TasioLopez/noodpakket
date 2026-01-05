@@ -1,0 +1,101 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Noodpakket voor Gezin</h2>
+<p>Een noodpakket voor een gezin vereist extra planning omdat je rekening moet houden met verschillende behoeften van volwassenen, kinderen en mogelijk baby's. Hier is een complete gids voor het samenstellen van een gezin noodpakket.</p>
+
+<h3>Speciale Overwegingen voor Gezinnen</h3>
+<p>Bij het samenstellen van een gezin noodpakket zijn er extra factoren om rekening mee te houden:</p>
+<ul>
+  <li>Verschillende leeftijden met verschillende behoeften</li>
+  <li>Meer water en voedsel nodig</li>
+  <li>Extra veiligheidsmaatregelen voor kinderen</li>
+  <li>Entertainment en comfort items voor kinderen</li>
+  <li>Speciale behoeften van baby's (indien van toepassing)</li>
+</ul>
+
+<h3>Water en Voedsel voor Gezinnen</h3>
+<p>Voor een gezin moet je rekening houden met:</p>
+<ul>
+  <li>Volwassenen: 3 liter water per dag</li>
+  <li>Kinderen: 1,5-2 liter water per dag</li>
+  <li>Baby's: 0,5-1 liter water per dag</li>
+  <li>Voedsel dat kinderen ook willen eten</li>
+  <li>Extra snacks voor kinderen</li>
+</ul>
+
+<h3>Veiligheid voor Kinderen</h3>
+<p>Zorg voor extra veiligheidsmaatregelen:</p>
+<ul>
+  <li>Duidelijke instructies voor kinderen wat te doen</li>
+  <li>Veilige opslag van gevaarlijke items</li>
+  <li>Extra toezicht tijdens noodsituaties</li>
+  <li>Kinderen betrekken bij voorbereiding (op leeftijdsniveau)</li>
+</ul>
+
+<h3>Comfort en Entertainment</h3>
+<p>Voor langere noodsituaties overweeg:</p>
+<ul>
+  <li>Favoriete speelgoed of boeken</li>
+  <li>Kleurboeken en potloden</li>
+  <li>Kaartspellen</li>
+  <li>Troost items zoals knuffels</li>
+</ul>
+`;
+
+const checklist = [
+  'Water: Minimaal 9 liter per persoon voor 3 dagen',
+  'Voedsel: Lang houdbaar en kindvriendelijk',
+  'Extra snacks voor kinderen',
+  'EHBO-set geschikt voor alle leeftijden',
+  'Medicijnen voor alle gezinsleden',
+  'Zaklampen: Minimaal 1 per kamer',
+  'Batterij-aangedreven radio',
+  'Powerbanks voor alle telefoons',
+  'Entertainment voor kinderen (boeken, speelgoed)',
+  'Comfort items (knuffels, dekens)',
+  'Belangrijke documenten voor alle gezinsleden',
+  'Foto\'s van gezinsleden (voor identificatie)',
+  'Contactgegevens van school en vrienden',
+];
+
+const tips = [
+  'Betrek kinderen bij de voorbereiding (op leeftijdsniveau)',
+  'Oefen regelmatig wat te doen bij noodsituaties',
+  'Houd het noodpakket op een plaats waar kinderen het kennen maar niet bij kunnen',
+  'Zorg voor comfort items - stress is moeilijk voor kinderen',
+  'Overweeg aparte go-bags voor elk gezinslid',
+];
+
+const faqs = [
+  {
+    question: 'Hoeveel kost een noodpakket voor een gezin?',
+    answer: 'Voor een gezin van 4 personen (2 volwassenen, 2 kinderen) kost een compleet 72-uurs noodpakket ongeveer €300-500, afhankelijk van wat je al hebt.',
+  },
+  {
+    question: 'Moeten kinderen hun eigen go-bag hebben?',
+    answer: 'Het is handig om elk gezinslid een eigen go-bag te geven, maar zorg wel dat deze geschikt is voor hun leeftijd en dat volwassenen kunnen helpen.',
+  },
+  {
+    question: 'Hoe leg je kinderen uit wat een noodpakket is?',
+    answer: 'Leg het uit op een manier die past bij hun leeftijd. Focus op veiligheid en "als er iets gebeurt, zijn we voorbereid". Maak het niet te eng.',
+  },
+];
+---
+
+<Subpage
+  title="Noodpakket voor Gezin"
+  description="Leer hoe je een compleet noodpakket voor je gezin samenstelt. Met speciale aandacht voor kinderen, baby's en gezinsbehoeften."
+  content={content}
+  silo="noodpakketten"
+  pageSlug="gezin"
+  keywords={['noodpakket gezin', 'gezin voorbereiding', 'noodpakket kinderen', 'crisisvoorbereiding gezin']}
+  checklist={checklist}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Noodpakket voor Gezin - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoe je een compleet noodpakket voor je gezin samenstelt. Checklist, tips en alles wat je nodig hebt voor gezinsvoorbereiding."
+/>
+
+

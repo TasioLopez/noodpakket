@@ -1,0 +1,58 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import ToolPage from '../../components/templates/ToolPage.astro';
+
+// Import all tool components
+import WaterCalculator from '../../components/tools/WaterCalculator';
+import FoodCalculator from '../../components/tools/FoodCalculator';
+import Checklist from '../../components/tools/Checklist';
+import { default as Calculator72Uur } from '../../components/tools/72UurCalculator';
+import NoodpakketCalculator from '../../components/tools/NoodpakketCalculator';
+import NoodplanGenerator from '../../components/tools/NoodplanGenerator';
+import Evacuatieplan from '../../components/tools/Evacuatieplan';
+import GoBagBuilder from '../../components/tools/GoBagBuilder';
+import RisicoMeter from '../../components/tools/RisicoMeter';
+import MaaltijdPlanner from '../../components/tools/MaaltijdPlanner';
+import Voorraadchecker from '../../components/tools/Voorraadchecker';
+
+// Component registry mapping
+const toolComponents: Record<string, any> = {
+  WaterCalculator,
+  FoodCalculator,
+  Checklist,
+  '72UurCalculator': Calculator72Uur,
+  NoodpakketCalculator,
+  NoodplanGenerator,
+  Evacuatieplan,
+  GoBagBuilder,
+  RisicoMeter,
+  MaaltijdPlanner,
+  Voorraadchecker,
+};
+
+export async function getStaticPaths() {
+  const entries = await getCollection('tools');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const SelectedTool = toolComponents[data.toolComponent] || WaterCalculator;
+---
+
+<ToolPage
+  title={data.title}
+  description={data.description}
+  toolComponent={SelectedTool}
+  silo="tools"
+  keywords={data.keywords || []}
+  faqs={data.faqs || []}
+  seoTitle={data.seoTitle}
+  seoDescription={data.seoDescription}
+/>
+
+
+

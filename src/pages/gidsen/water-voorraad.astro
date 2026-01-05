@@ -1,0 +1,73 @@
+---
+import GuidePage from '../../components/templates/GuidePage.astro';
+
+const content = `
+<h2>Water Voorraad Opbouwen</h2>
+<p>Water is het belangrijkste onderdeel van je noodvoorraad. Zonder water kun je maar enkele dagen overleven. Hier leer je hoe je een goede watervoorraad opbouwt en onderhoudt.</p>
+`;
+
+const steps = [
+  {
+    title: 'Bepaal Je Waterbehoefte',
+    content: 'Reken uit hoeveel water je nodig hebt. Minimaal 3 liter per persoon per dag voor 3 dagen betekent 9 liter per persoon. Voor een gezin van 4 personen is dat 36 liter water.',
+  },
+  {
+    title: 'Kies Geschikte Containers',
+    content: 'Gebruik schone, lege plastic flessen van 1,5 liter. Voorkom containers die melk of vruchtensap bevatten (resten kunnen bacteriën veroorzaken). Gebruik alleen flessen die bedoeld zijn voor water.',
+  },
+  {
+    title: 'Bereid Water Voor',
+    content: 'Gebruik leidingwater - dit is al veilig. Als je twijfelt, kook het water eerst en laat het afkoelen voordat je het in flessen doet. Voeg geen conserveermiddelen toe.',
+  },
+  {
+    title: 'Bewaar Correct',
+    content: 'Bewaar waterflessen op een koele, donkere plek. Voorkom direct zonlicht. Rotate je voorraad regelmatig - gebruik oud water en vul bij met vers water.',
+  },
+  {
+    title: 'Voeg Zuivering Toe',
+    content: 'Overweeg waterzuivering tabletten of een waterfilter toe te voegen aan je voorraad. Dit is handig voor langere noodsituaties of als je twijfelt over waterkwaliteit.',
+  },
+  {
+    title: 'Controleer Regelmatig',
+    content: 'Controleer je watervoorraad minstens 2 keer per jaar. Controleer op lekkages, houdbaarheidsdata en vervang water dat langer dan 6 maanden oud is.',
+  },
+];
+
+const tips = [
+  'Begin klein - zelfs 9 liter per persoon is een goede start',
+  'Roteer je voorraad regelmatig door oud water te gebruiken',
+  'Overweeg meerdere opslaglocaties (verspreid risico)',
+  'Bewaar flessen in kartonnen dozen (beschermt tegen licht)',
+  'Label je flessen met de datum van vullen',
+  'Overweeg grotere containers (5-10 liter) voor langere voorraden',
+];
+
+const faqs = [
+  {
+    question: 'Hoe lang blijft water houdbaar?',
+    answer: 'Gefilterd leidingwater in gesloten flessen blijft lang houdbaar. Vervang het wel minstens 1x per jaar, of als de flessen beschadigd zijn.',
+  },
+  {
+    question: 'Kan ik regenwater gebruiken?',
+    answer: 'Regenwater kan gebruikt worden maar moet eerst gezuiverd worden. Gebruik waterzuivering tabletten of kook het water voor gebruik.',
+  },
+  {
+    question: 'Hoeveel water is voldoende?',
+    answer: 'Minimaal 9 liter per persoon voor 3 dagen. Voor langere noodsituaties of warm weer heb je meer nodig - plan voor minimaal 4 liter per dag.',
+  },
+];
+---
+
+<GuidePage
+  title="Water Voorraad Opbouwen"
+  description="Leer hoe je een goede watervoorraad opbouwt en onderhoudt. Stap-voor-stap gids voor wateropslag en -zuivering."
+  content={content}
+  steps={steps}
+  tips={tips}
+  keywords={['water voorraad', 'water opslag', 'water zuivering', 'noodvoorraad water']}
+  faqs={faqs}
+  seoTitle="Water Voorraad Opbouwen - Complete Gids | Noodpakket Center"
+  seoDescription="Leer hoe je een watervoorraad opbouwt. Stap-voor-stap gids voor wateropslag, zuivering en onderhoud."
+/>
+
+

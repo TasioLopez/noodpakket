@@ -1,0 +1,98 @@
+---
+import Subpage from '../../components/templates/Subpage.astro';
+
+const content = `
+<h2>Wat is een Noodpakket?</h2>
+<p>Een noodpakket is een verzameling essentiële items die je nodig hebt om jezelf en je gezin te beschermen tijdens noodsituaties zoals stroomuitval, overstromingen, evacuaties of andere crisissituaties.</p>
+
+<h3>Basisdefinitie</h3>
+<p>Een noodpakket bevat alle basisbenodigdheden die je nodig hebt om minimaal 72 uur (3 dagen) zelfstandig te kunnen functioneren zonder hulp van buitenaf. Het is je eerste verdedigingslinie wanneer normale diensten uitvallen.</p>
+
+<h3>Belangrijke Componenten</h3>
+<p>Een compleet noodpakket bestaat uit verschillende categorieën:</p>
+
+<h4>1. Water en Voedsel</h4>
+<ul>
+  <li>Minimaal 3 liter water per persoon per dag</li>
+  <li>Lang houdbaar voedsel (blik, gedroogd)</li>
+  <li>Producten die je gezin normaal ook eet</li>
+</ul>
+
+<h4>2. EHBO en Medicijnen</h4>
+<ul>
+  <li>Complete EHBO-set</li>
+  <li>Pijnstillers en basis medicijnen</li>
+  <li>Voorgeschreven medicijnen (indien nodig)</li>
+</ul>
+
+<h4>3. Communicatie en Licht</h4>
+<ul>
+  <li>Batterij-aangedreven of hand-aangedreven radio</li>
+  <li>Zaklamp met extra batterijen</li>
+  <li>Powerbank voor je telefoon</li>
+</ul>
+
+<h4>4. Documenten</h4>
+<ul>
+  <li>Kopieën van belangrijke documenten</li>
+  <li>Contactgegevens van familieleden</li>
+  <li>Verzekeringspapieren</li>
+</ul>
+
+<h3>Waarom is een Noodpakket Belangrijk?</h3>
+<p>Noodsituaties kunnen onverwachts optreden. Een goed voorbereid noodpakket helpt je:</p>
+<ul>
+  <li>Zelfstandig te overleven tot hulp arriveert</li>
+  <li>Rustig te blijven in stressvolle situaties</li>
+  <li>Je gezin te beschermen</li>
+  <li>Sneller te herstellen na een crisis</li>
+</ul>
+
+<h3>Verschillende Types</h3>
+<p>Er zijn verschillende types noodpakketten afhankelijk van je situatie:</p>
+<ul>
+  <li><strong>Thuis noodpakket:</strong> Bewaard op een vaste plek in huis</li>
+  <li><strong>Go-bag:</strong> Lichtgewicht pakket voor evacuatie</li>
+  <li><strong>Auto noodpakket:</strong> Voor in de auto</li>
+  <li><strong>Werk noodpakket:</strong> Kleine set voor op kantoor</li>
+</ul>
+`;
+
+const tips = [
+  'Begin met een basis noodpakket - beter klein beginnen dan niet beginnen',
+  'Houd het pakket op een makkelijk bereikbare plek',
+  'Controleer regelmatig houdbaarheidsdata',
+  'Test je voorbereiding door te simuleren wat je zou doen',
+  'Zorg dat alle gezinsleden weten waar het staat',
+];
+
+const faqs = [
+  {
+    question: 'Wat is het verschil tussen een noodpakket en een go-bag?',
+    answer: 'Een noodpakket is bedoeld om thuis te blijven en te gebruiken, terwijl een go-bag lichtgewicht is en bedoeld voor evacuatie. Beide zijn belangrijk voor verschillende scenario\'s.',
+  },
+  {
+    question: 'Hoe vaak moet ik mijn noodpakket controleren?',
+    answer: 'Controleer je noodpakket minimaal 2 keer per jaar. Controleer houdbaarheidsdata, batterijen en zorg dat alles compleet is.',
+  },
+  {
+    question: 'Moet ik een kant-en-klaar pakket kopen of zelf samenstellen?',
+    answer: 'Beide opties zijn goed. Kant-en-klaar pakketten zijn handig om te beginnen, maar zelf samenstellen geeft je meer controle over wat erin zit.',
+  },
+];
+---
+
+<Subpage
+  title="Wat is een Noodpakket?"
+  description="Leer alles over noodpakketten: wat het is, waarom het belangrijk is, en wat er in moet zitten. Complete uitleg voor beginners."
+  content={content}
+  silo="kennisbank"
+  pageSlug="noodpakket"
+  keywords={['noodpakket', 'wat is een noodpakket', 'emergency kit', 'crisisvoorbereiding']}
+  tips={tips}
+  faqs={faqs}
+  seoTitle="Wat is een Noodpakket? - Complete Uitleg | Noodpakket Center"
+  seoDescription="Leer alles over noodpakketten: wat het is, waarom het belangrijk is, en welke componenten erin horen. Complete gids voor beginners."
+/>
+
+

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layout/BaseLayout.astro';
+import Table from '../ui/Table.astro';
+import Card from '../ui/Card.astro';
+import FAQ from '../ui/FAQ.astro';
+import RelatedPages from '../ui/RelatedPages.astro';
+import { getRelatedGuides } from '@lib/internal-linking';
+import type { Silo } from '@lib/internal-linking';
+
+interface Product {
+  name: string;
+  brand?: string;
+  description: string;
+  pros?: string[];
+  cons?: string[];
+  price?: string;
+  rating?: number;
+  image?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  products: Product[];
+  tableHeaders?: string[];
+  tableRows?: string[][];
+  topProducts?: Product[];
+  keywords?: string[];
+  faqs?: Array<{ question: string; answer: string }>;
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+const {
+  title,
+  description,
+  products = [],
+  tableHeaders,
+  tableRows,
+  topProducts = [],
+  keywords = [],
+  faqs = [],
+  seoTitle,
+  seoDescription,
+} = Astro.props;
+
+const relatedGuides = getRelatedGuides(keywords, 'vergelijking', 3);
+---
+
+<BaseLayout
+  seo={{
+    title: seoTitle || title,
+    description: seoDescription || description,
+    keywords,
+    canonical: `/vergelijking/${title.toLowerCase().replace(/\s+/g, '-')}`,
+  }}
+  breadcrumbs={[
+    { name: 'Vergelijkingen', url: '/vergelijking' },
+    { name: title, url: `/vergelijking/${title.toLowerCase().replace(/\s+/g, '-')}` },
+  ]}
+>
+  <div class="container-custom section section-white">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="mb-6">{title}</h1>
+      <p class="text-lg text-neutral-600 mb-12">{description}</p>
+      
+      {tableHeaders && tableRows && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-6">Vergelijkingstabel</h2>
+          <Table headers={tableHeaders} rows={tableRows} />
+        </section>
+      )}
+      
+      {topProducts.length > 0 && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-6">Top Aanbevelingen</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {topProducts.map((product) => (
+              <Card
+                title={product.name}
+                description={product.description}
+                image={product.image}
+              >
+                {product.pros && (
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-sm mb-2">Voordelen:</h4>
+                    <ul class="text-sm space-y-1">
+                      {product.pros.map((pro) => (
+                        <li class="flex items-start">
+                          <span class="text-primary-600 mr-2">✓</span>
+                          <span class="text-neutral-700">{pro}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {product.cons && (
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-sm mb-2">Nadelen:</h4>
+                    <ul class="text-sm space-y-1">
+                      {product.cons.map((con) => (
+                        <li class="flex items-start">
+                          <span class="text-neutral-500 mr-2">•</span>
+                          <span class="text-neutral-700">{con}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {product.price && (
+                  <p class="mt-4 font-semibold text-neutral-900">{product.price}</p>
+                )}
+              </Card>
+            ))}
+          </div>
+        </section>
+      )}
+      
+      {products.length > 0 && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-6">Alle Producten</h2>
+          <div class="space-y-8">
+            {products.map((product) => (
+              <div class="card">
+                <h3 class="text-xl font-semibold text-neutral-900 mb-2">{product.name}</h3>
+                {product.brand && (
+                  <p class="text-sm text-neutral-600 mb-4">Merk: {product.brand}</p>
+                )}
+                <p class="text-neutral-700 mb-4">{product.description}</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {product.pros && (
+                    <div>
+                      <h4 class="font-semibold mb-2">Voordelen:</h4>
+                      <ul class="space-y-1">
+                        {product.pros.map((pro) => (
+                          <li class="flex items-start text-sm text-neutral-700">
+                            <span class="text-primary-600 mr-2">✓</span>
+                            {pro}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {product.cons && (
+                    <div>
+                      <h4 class="font-semibold mb-2">Nadelen:</h4>
+                      <ul class="space-y-1">
+                        {product.cons.map((con) => (
+                          <li class="flex items-start text-sm text-neutral-700">
+                            <span class="text-neutral-500 mr-2">•</span>
+                            {con}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      
+      {relatedGuides.length > 0 && (
+        <div class="mt-12">
+          <RelatedPages pages={relatedGuides} title="Gerelateerde Gidsen" />
+        </div>
+      )}
+      
+      {faqs.length > 0 && (
+        <div class="mt-12">
+          <FAQ faqs={faqs} />
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>
