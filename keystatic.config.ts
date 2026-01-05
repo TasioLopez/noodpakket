@@ -45,7 +45,7 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs', itemLabel: (props) => props.fields.question.value || 'FAQ' }
@@ -64,7 +64,7 @@ export default config({
           { label: 'Keywords' }
         ),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         
         // Metadata
         datePublished: fields.date({ label: 'Date Published' }),
@@ -101,7 +101,7 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
@@ -113,7 +113,7 @@ export default config({
         }),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         datePublished: fields.date({ label: 'Date Published' }),
         dateModified: fields.date({ label: 'Date Modified' }),
         author: fields.text({ label: 'Author', defaultValue: 'Noodpakket Center' }),
@@ -143,7 +143,7 @@ export default config({
             label: 'Step',
             schema: {
               title: fields.text({ label: 'Step Title' }),
-              content: fields.textarea({ label: 'Step Content', multiline: true }),
+              content: fields.text({ label: 'Step Content', multiline: true }),
               image: fields.image({
                 label: 'Step Image',
                 directory: 'public/images/gidsen/steps',
@@ -160,7 +160,7 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
@@ -172,7 +172,7 @@ export default config({
         }),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         datePublished: fields.date({ label: 'Date Published' }),
         dateModified: fields.date({ label: 'Date Modified' }),
         author: fields.text({ label: 'Author', defaultValue: 'Noodpakket Center' }),
@@ -229,14 +229,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         datePublished: fields.date({ label: 'Date Published' }),
         dateModified: fields.date({ label: 'Date Modified' }),
         author: fields.text({ label: 'Author', defaultValue: 'Noodpakket Center' }),
@@ -266,7 +266,7 @@ export default config({
             schema: {
               name: fields.text({ label: 'Product Name' }),
               brand: fields.text({ label: 'Brand' }),
-              description: fields.textarea({ label: 'Description', multiline: true }),
+              description: fields.text({ label: 'Description', multiline: true }),
               pros: fields.array(fields.text({ label: 'Pro' }), { label: 'Pros' }),
               cons: fields.array(fields.text({ label: 'Con' }), { label: 'Cons' }),
               price: fields.text({ label: 'Price' }),
@@ -293,14 +293,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         datePublished: fields.date({ label: 'Date Published' }),
         dateModified: fields.date({ label: 'Date Modified' }),
         author: fields.text({ label: 'Author', defaultValue: 'Noodpakket Center' }),
@@ -324,7 +324,7 @@ export default config({
         content: fields.mdx({ label: 'Content' }),
         
         // Definition for glossary terms
-        definition: fields.textarea({ 
+        definition: fields.text({ 
           label: 'Definition (Short)', 
           multiline: true 
         }),
@@ -334,14 +334,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
         datePublished: fields.date({ label: 'Date Published' }),
         dateModified: fields.date({ label: 'Date Modified' }),
         author: fields.text({ label: 'Author', defaultValue: 'Noodpakket Center' }),
@@ -375,7 +375,7 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
@@ -383,7 +383,7 @@ export default config({
         
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
     
@@ -409,14 +409,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
     
@@ -442,14 +442,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
     
@@ -475,14 +475,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
     
@@ -508,14 +508,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
     
@@ -541,14 +541,14 @@ export default config({
             label: 'FAQ',
             schema: {
               question: fields.text({ label: 'Question' }),
-              answer: fields.textarea({ label: 'Answer', multiline: true }),
+              answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
           { label: 'FAQs' }
         ),
         keywords: fields.array(fields.text({ label: 'Keyword' }), { label: 'Keywords' }),
         seoTitle: fields.text({ label: 'SEO Title' }),
-        seoDescription: fields.textarea({ label: 'SEO Description' }),
+        seoDescription: fields.text({ label: 'SEO Description', multiline: true }),
       },
     }),
   },

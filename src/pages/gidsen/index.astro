@@ -1,10 +1,10 @@
 ---
-import { getSingleton, getCollection } from 'astro:content';
+import { getSingletonData } from '../../lib/keystatic-reader';
 import PillarPage from '../../components/templates/PillarPage.astro';
 
-const pillar = await getSingleton('gidsenPillar');
-const data = pillar.data;
-const introContent = data.introContent ? (await pillar.render()).html : undefined;
+const pillar = await getSingletonData('gidsenPillar');
+const data = pillar || {};
+const introContent = data.introContent || undefined;
 ---
 
 <PillarPage

@@ -5,10 +5,38 @@ import RelatedPages from '../ui/RelatedPages.astro';
 import { getRelatedGuides } from '@lib/internal-linking';
 import type { Silo } from '@lib/internal-linking';
 
+// Import all tool components
+import WaterCalculator from '../tools/WaterCalculator';
+import FoodCalculator from '../tools/FoodCalculator';
+import Checklist from '../tools/Checklist';
+import Calculator72Uur from '../tools/72UurCalculator';
+import NoodpakketCalculator from '../tools/NoodpakketCalculator';
+import NoodplanGenerator from '../tools/NoodplanGenerator';
+import Evacuatieplan from '../tools/Evacuatieplan';
+import GoBagBuilder from '../tools/GoBagBuilder';
+import RisicoMeter from '../tools/RisicoMeter';
+import MaaltijdPlanner from '../tools/MaaltijdPlanner';
+import Voorraadchecker from '../tools/Voorraadchecker';
+
+// Component registry
+const toolComponents: Record<string, any> = {
+  WaterCalculator,
+  FoodCalculator,
+  Checklist,
+  '72UurCalculator': Calculator72Uur,
+  NoodpakketCalculator,
+  NoodplanGenerator,
+  Evacuatieplan,
+  GoBagBuilder,
+  RisicoMeter,
+  MaaltijdPlanner,
+  Voorraadchecker,
+};
+
 interface Props {
   title: string;
   description: string;
-  toolComponent: any; // React component
+  toolComponent: any; // React component or component name string
   silo: Silo;
   keywords?: string[];
   faqs?: Array<{ question: string; answer: string }>;
@@ -19,13 +47,18 @@ interface Props {
 const {
   title,
   description,
-  toolComponent: ToolComponent,
+  toolComponent,
   silo,
   keywords = [],
   faqs = [],
   seoTitle,
   seoDescription,
 } = Astro.props;
+
+// Resolve component name
+const componentName = typeof toolComponent === 'string' 
+  ? toolComponent
+  : toolComponent?.name || 'WaterCalculator';
 
 const relatedGuides = getRelatedGuides(keywords, silo, 3);
 ---
@@ -48,7 +81,17 @@ const relatedGuides = getRelatedGuides(keywords, silo, 3);
       <p class="text-lg text-neutral-600 mb-8">{description}</p>
       
       <div class="card mb-8">
-        <ToolComponent client:load />
+        {componentName === 'WaterCalculator' && <WaterCalculator client:load />}
+        {componentName === 'FoodCalculator' && <FoodCalculator client:load />}
+        {componentName === 'Checklist' && <Checklist client:load />}
+        {componentName === '72UurCalculator' && <Calculator72Uur client:load />}
+        {componentName === 'NoodpakketCalculator' && <NoodpakketCalculator client:load />}
+        {componentName === 'NoodplanGenerator' && <NoodplanGenerator client:load />}
+        {componentName === 'Evacuatieplan' && <Evacuatieplan client:load />}
+        {componentName === 'GoBagBuilder' && <GoBagBuilder client:load />}
+        {componentName === 'RisicoMeter' && <RisicoMeter client:load />}
+        {componentName === 'MaaltijdPlanner' && <MaaltijdPlanner client:load />}
+        {componentName === 'Voorraadchecker' && <Voorraadchecker client:load />}
       </div>
       
       {relatedGuides.length > 0 && (

@@ -31,22 +31,28 @@ const toolComponents: Record<string, any> = {
 };
 
 export async function getStaticPaths() {
-  const entries = await getCollection('tools');
-  return entries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  try {
+    const entries = await getCollection('tools');
+    return entries.map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+  } catch (error) {
+    // If collection doesn't exist yet (managed by Keystatic), return empty array
+    console.warn('Tools collection not found, returning empty paths');
+    return [];
+  }
 }
 
 const { entry } = Astro.props;
 const data = entry.data;
-const SelectedTool = toolComponents[data.toolComponent] || WaterCalculator;
+const SelectedTool = data.toolComponent || 'WaterCalculator';
 ---
 
 <ToolPage
   title={data.title}
   description={data.description}
-  toolComponent={SelectedTool}
+  toolComponent={SelectedTool as string}
   silo="tools"
   keywords={data.keywords || []}
   faqs={data.faqs || []}

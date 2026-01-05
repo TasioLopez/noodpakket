@@ -3,11 +3,15 @@ import { getEntry, getCollection } from 'astro:content';
 import Subpage from '../../components/templates/Subpage.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('kennisbank');
-  return entries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  try {
+    const entries = await getCollection('kennisbank');
+    return entries.map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+  } catch (error) {
+    return [];
+  }
 }
 
 const { entry } = Astro.props;
