@@ -280,7 +280,7 @@ export default config({
             schema: {
               name: fields.text({ label: 'Product Name' }),
               brand: fields.text({ label: 'Brand' }),
-              // @ts-ignore
+              // @ts-ignore - Type mismatch in Keystatic type definitions
               description: fields.text({ label: 'Description', multiline: true }),
               pros: fields.array(fields.text({ label: 'Pro' }), { label: 'Pros' }),
               cons: fields.array(fields.text({ label: 'Con' }), { label: 'Cons' }),
