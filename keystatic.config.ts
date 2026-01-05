@@ -48,7 +48,7 @@ export default config({
               answer: fields.text({ label: 'Answer', multiline: true }),
             },
           }),
-          { label: 'FAQs', itemLabel: (props) => props.fields.question.value || 'FAQ' }
+          { label: 'FAQs' }
         ),
         
         // Featured image
