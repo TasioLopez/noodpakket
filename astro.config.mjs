@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import keystatic from '@keystatic/astro';
-import vercel from '@astrojs/vercel';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +17,9 @@ export default defineConfig({
     keystatic(), // Keystatic CMS integration
   ],
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+    isr: true,
+  }),
   build: {
     inlineStylesheets: 'auto',
   },
