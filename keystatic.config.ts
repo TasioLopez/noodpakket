@@ -39,8 +39,10 @@ export default config({
         // FAQs
         // FAQs
         faqs: fields.array(
+          // @ts-ignore
           fields.object({
             schema: {
+              // @ts-ignore
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
             },
