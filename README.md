@@ -4,11 +4,12 @@ De meest autoritaire, complete, SEO-geoptimaliseerde en betrouwbare website in N
 
 ## Tech Stack
 
-- **Framework:** Astro 4.x with TypeScript
-- **Content:** Markdown/MDX with Astro Content Collections
+- **Framework:** Astro 5.x with TypeScript
+- **Content:** Keystatic CMS with Markdown/MDX
 - **Styling:** Tailwind CSS
 - **Interactive Components:** React (via Astro Islands Architecture)
-- **Deployment:** Vercel
+- **Deployment:** Vercel (Server-Side Rendering)
+- **Analytics:** Google Analytics 4 & Microsoft Clarity
 
 ## Getting Started
 
@@ -29,11 +30,16 @@ npm run preview
 ## Project Structure
 
 - `/src/pages/` - Route files (file-based routing)
-- `/src/content/` - Content Collections (markdown files)
+- `/src/content/` - Content Collections (managed via Keystatic CMS)
 - `/src/components/` - Reusable components
-- `/src/layouts/` - Page layouts
+- `/src/components/layout/` - Page layouts
 - `/src/lib/` - Utilities and helpers
 - `/public/` - Static assets
+- `/keystatic.config.ts` - Keystatic CMS configuration
+
+## Content Management
+
+This project uses **Keystatic CMS** for content management. See `CMS_SETUP.md` for detailed instructions on accessing and using the admin dashboard.
 
 ## Site Structure
 
