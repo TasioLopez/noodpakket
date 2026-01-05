@@ -141,17 +141,15 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'Step',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Step Title' }),
-              content: fields.text({ label: 'Step Content', multiline: true }),
-              image: fields.image({
-                label: 'Step Image',
-                directory: 'public/images/gidsen/steps',
-                publicPath: '/images/gidsen/steps',
-              }),
-            },
+            title: fields.text({ label: 'Step Title' }),
+            // @ts-ignore
+            content: fields.text({ label: 'Step Content', multiline: true }),
+            // @ts-ignore
+            image: fields.image({
+              label: 'Step Image',
+              directory: 'public/images/gidsen/steps',
+              publicPath: '/images/gidsen/steps',
+            }),
           }),
           { label: 'Steps', itemLabel: (props: any) => props.fields?.title?.value || 'Step' }
         ),
@@ -220,12 +218,9 @@ export default config({
         // @ts-ignore - Keystatic type definitions don't fully match runtime structure
         toolConfig: fields.object({
           // @ts-ignore
-          label: 'Tool Configuration',
-          schema: {
-            // @ts-ignore
-            defaultDays: fields.number({ label: 'Default Days', defaultValue: 3 }),
-            maxDays: fields.number({ label: 'Max Days', defaultValue: 30 }),
-          },
+          defaultDays: fields.number({ label: 'Default Days', defaultValue: 3 }),
+          // @ts-ignore
+          maxDays: fields.number({ label: 'Max Days', defaultValue: 30 }),
         }),
         
         content: fields.mdx({ label: 'Content (optional)' }),
@@ -270,23 +265,25 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'Product',
-            schema: {
-              name: fields.text({ label: 'Product Name' }),
-              brand: fields.text({ label: 'Brand' }),
-              // @ts-ignore - Type mismatch in Keystatic type definitions
-              description: fields.text({ label: 'Description', multiline: true }),
-              pros: fields.array(fields.text({ label: 'Pro' }), { label: 'Pros' }),
-              cons: fields.array(fields.text({ label: 'Con' }), { label: 'Cons' }),
-              // @ts-ignore
-              price: fields.text({ label: 'Price' }),
-              rating: fields.number({ label: 'Rating (1-5)', validation: { min: 1, max: 5 } }),
-              image: fields.image({
-                label: 'Product Image',
-                directory: 'public/images/vergelijking',
-                publicPath: '/images/vergelijking',
-              }),
-            },
+            name: fields.text({ label: 'Product Name' }),
+            // @ts-ignore
+            brand: fields.text({ label: 'Brand' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
+            // @ts-ignore
+            pros: fields.array(fields.text({ label: 'Pro' }), { label: 'Pros' }),
+            // @ts-ignore
+            cons: fields.array(fields.text({ label: 'Con' }), { label: 'Cons' }),
+            // @ts-ignore
+            price: fields.text({ label: 'Price' }),
+            // @ts-ignore
+            rating: fields.number({ label: 'Rating (1-5)', validation: { min: 1, max: 5 } }),
+            // @ts-ignore
+            image: fields.image({
+              label: 'Product Image',
+              directory: 'public/images/vergelijking',
+              publicPath: '/images/vergelijking',
+            }),
           }),
           { label: 'Products', itemLabel: (props: any) => props.fields?.name?.value || 'Product' }
         ),
@@ -375,13 +372,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
@@ -416,13 +409,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
@@ -455,13 +444,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
@@ -494,13 +479,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
@@ -533,13 +514,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
@@ -572,13 +549,9 @@ export default config({
           // @ts-ignore
           fields.object({
             // @ts-ignore
-            label: 'What You\'ll Find Item',
-            schema: {
-              // @ts-ignore
-              title: fields.text({ label: 'Title' }),
-              // @ts-ignore
-              description: fields.text({ label: 'Description', multiline: true }),
-            },
+            title: fields.text({ label: 'Title' }),
+            // @ts-ignore
+            description: fields.text({ label: 'Description', multiline: true }),
           }),
           { label: 'What You\'ll Find' }
         ),
