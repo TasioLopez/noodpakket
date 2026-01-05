@@ -31,17 +31,18 @@ export default config({
         // Structured components
         checklist: fields.array(
           fields.text({ label: 'Checklist Item' }),
-          { label: 'Checklist', itemLabel: (props) => props.value || 'Item' }
+          { label: 'Checklist', itemLabel: (props: { value: string }) => props.value || 'Item' }
         ),
         
         tips: fields.array(
           fields.text({ label: 'Tip' }),
-          { label: 'Tips', itemLabel: (props) => props.value || 'Tip' }
+          { label: 'Tips', itemLabel: (props: { value: string }) => props.value || 'Tip' }
         ),
         
         // FAQs
         faqs: fields.array(
           fields.object({
+            label: 'FAQ Item',
             schema: {
               question: fields.text({ label: 'Question' }),
               answer: fields.text({ label: 'Answer', multiline: true }),
@@ -149,7 +150,7 @@ export default config({
               }),
             },
           }),
-          { label: 'Steps', itemLabel: (props) => props.fields.title.value || 'Step' }
+          { label: 'Steps', itemLabel: (props: { fields: { title: { value: string } } }) => props.fields.title.value || 'Step' }
         ),
         
         tips: fields.array(fields.text({ label: 'Tip' }), { label: 'Tips' }),
@@ -274,7 +275,7 @@ export default config({
               }),
             },
           }),
-          { label: 'Products', itemLabel: (props) => props.fields.name.value || 'Product' }
+          { label: 'Products', itemLabel: (props: { fields: { name: { value: string } } }) => props.fields.name.value || 'Product' }
         ),
         
         // Comparison table (optional)

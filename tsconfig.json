@@ -19,11 +19,11 @@
     "module": "ESNext",
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "keystatic.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
