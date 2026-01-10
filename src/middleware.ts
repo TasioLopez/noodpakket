@@ -155,10 +155,29 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
 
     const formData = await request.formData();
     const password = formData.get('password') as string;
-    const secret = import.meta.env.KEYSTATIC_SECRET;
+    
+    // Access environment variables - in Vercel serverless functions, use process.env at runtime
+    // import.meta.env is for build-time, but middleware runs at runtime
+    const secret = typeof process !== 'undefined' && process.env ? process.env.KEYSTATIC_SECRET : import.meta.env.KEYSTATIC_SECRET;
+    const storedHash = typeof process !== 'undefined' && process.env ? process.env.KEYSTATIC_PASSWORD_HASH : import.meta.env.KEYSTATIC_PASSWORD_HASH;
 
-    if (!secret) {
-      return new Response('KEYSTATIC_SECRET not configured', { status: 500 });
+    // Check if KEYSTATIC_SECRET is configured
+    if (!secret || (typeof secret === 'string' && secret.trim() === '')) {
+      console.error('❌ KEYSTATIC_SECRET is missing or empty');
+      if (typeof process !== 'undefined' && process.env) {
+        const available = Object.keys(process.env).filter(k => k.includes('KEYSTATIC')).join(', ') || 'none';
+        console.error('Available KEYSTATIC env vars (process.env):', available);
+      }
+      return new Response(
+        getLoginHTML(
+          false, 
+          'Server configuration error: KEYSTATIC_SECRET not configured. Please verify in Vercel Settings → Environment Variables that KEYSTATIC_SECRET is set for Production environment, then redeploy your project.'
+        ),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'text/html' },
+        }
+      );
     }
 
     // Validate password format
@@ -173,14 +192,12 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
       );
     }
 
-    // Get stored password hash from environment
-    const storedHash = import.meta.env.KEYSTATIC_PASSWORD_HASH;
-
     if (!storedHash) {
       // First time setup - hash and store the password
       // You'll need to set KEYSTATIC_PASSWORD_HASH in Vercel after first login
       const hash = await bcrypt.hash(password + secret, 12); // 12 rounds
       console.log('🔐 First-time setup - Add this to Vercel KEYSTATIC_PASSWORD_HASH:', hash);
+      console.log('🔐 Make sure to add it in Vercel Settings → Environment Variables → Production');
       
       // For first time, we'll accept it and log the hash
       resetAttempts(clientIP);
